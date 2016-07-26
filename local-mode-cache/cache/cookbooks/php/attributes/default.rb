@@ -25,7 +25,7 @@ default['php']['bin'] = 'php'
 default['php']['pear'] = 'pear'
 default['php']['pecl'] = 'pecl'
 
-default['php']['version'] = '5.6.13'
+default['php']['version'] = '5.3.29'
 
 default['php']['url'] = 'http://us1.php.net/get'
 default['php']['checksum'] = '92acc6c067f5e015a6881b4119eafec10eca11722e810f2c2083f72e17119bcf'

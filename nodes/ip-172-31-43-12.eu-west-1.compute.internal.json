@@ -1,3 +1,3721 @@
 {
-  "name": "ip-172-31-43-12.eu-west-1.compute.internal"
+  "name": "ip-172-31-43-12.eu-west-1.compute.internal",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "default": {
+    "apt": {
+      "cacher-client": {
+        "restrict_environment": false
+      },
+      "cacher_dir": "/var/cache/apt-cacher-ng",
+      "cacher_interface": null,
+      "cacher_port": 3142,
+      "cacher_ssl_support": false,
+      "caching_server": false,
+      "compiletime": false,
+      "compile_time_update": false,
+      "key_proxy": "",
+      "cache_bypass": {
+
+      },
+      "periodic_update_min_delay": 86400,
+      "launchpad_api_version": "1.0",
+      "unattended_upgrades": {
+        "enable": false,
+        "update_package_lists": true,
+        "allowed_origins": [
+          "Amazon "
+        ],
+        "origins_patterns": [
+
+        ],
+        "package_blacklist": [
+
+        ],
+        "auto_fix_interrupted_dpkg": false,
+        "minimal_steps": false,
+        "install_on_shutdown": false,
+        "mail": null,
+        "mail_only_on_error": true,
+        "remove_unused_dependencies": false,
+        "automatic_reboot": false,
+        "automatic_reboot_time": "now",
+        "dl_limit": null,
+        "random_sleep": null
+      },
+      "confd": {
+        "install_recommends": true,
+        "install_suggests": false
+      }
+    },
+    "apache": {
+      "mpm": "prefork",
+      "version": "2.4",
+      "root_group": "root",
+      "default_site_name": "default",
+      "package": "httpd24",
+      "devel_package": "httpd24-devel",
+      "service_name": "httpd",
+      "perl_pkg": "perl",
+      "apachectl": "/usr/sbin/apachectl",
+      "dir": "/etc/httpd",
+      "log_dir": "/var/log/httpd",
+      "error_log": "error.log",
+      "access_log": "access.log",
+      "user": "apache",
+      "group": "apache",
+      "binary": "/usr/sbin/httpd",
+      "conf_dir": "/etc/httpd/conf",
+      "docroot_dir": "/var/www/html",
+      "cgibin_dir": "/var/www/cgi-bin",
+      "icondir": "/usr/share/httpd/icons",
+      "cache_dir": "/var/cache/httpd",
+      "run_dir": "/var/run/httpd",
+      "lock_dir": "/var/run/httpd",
+      "pid_file": "/var/run/httpd/httpd.pid",
+      "lib_dir": "/usr/lib64/httpd",
+      "libexec_dir": "/usr/lib64/httpd/modules",
+      "listen": [
+        "*:80"
+      ],
+      "contact": "ops@example.com",
+      "timeout": 300,
+      "keepalive": "On",
+      "keepaliverequests": 100,
+      "keepalivetimeout": 5,
+      "locale": "C",
+      "sysconfig_additional_params": {
+
+      },
+      "default_site_enabled": false,
+      "default_site_port": "80",
+      "access_file_name": ".htaccess",
+      "default_release": null,
+      "servertokens": "Prod",
+      "serversignature": "On",
+      "traceenable": "Off",
+      "status_allow_list": "127.0.0.1 ::1",
+      "ext_status": false,
+      "info_allow_list": "127.0.0.1 ::1",
+      "mpm_support": [
+        "prefork",
+        "worker",
+        "event"
+      ],
+      "prefork": {
+        "startservers": 16,
+        "minspareservers": 16,
+        "maxspareservers": 32,
+        "serverlimit": 256,
+        "maxrequestworkers": 256,
+        "maxconnectionsperchild": 10000
+      },
+      "worker": {
+        "startservers": 4,
+        "serverlimit": 16,
+        "minsparethreads": 64,
+        "maxsparethreads": 192,
+        "threadlimit": 192,
+        "threadsperchild": 64,
+        "maxrequestworkers": 1024,
+        "maxconnectionsperchild": 0
+      },
+      "event": {
+        "startservers": 4,
+        "serverlimit": 16,
+        "minsparethreads": 64,
+        "maxsparethreads": 192,
+        "threadlimit": 192,
+        "threadsperchild": 64,
+        "maxrequestworkers": 1024,
+        "maxconnectionsperchild": 0
+      },
+      "proxy": {
+        "require": "all denied",
+        "order": "deny,allow",
+        "deny_from": "all",
+        "allow_from": "none"
+      },
+      "default_modules": [
+        "status",
+        "alias",
+        "auth_basic",
+        "authn_core",
+        "authn_file",
+        "authz_core",
+        "authz_groupfile",
+        "authz_host",
+        "authz_user",
+        "autoindex",
+        "deflate",
+        "dir",
+        "env",
+        "mime",
+        "negotiation",
+        "setenvif",
+        "log_config",
+        "logio",
+        "unixd"
+      ],
+      "mod_auth_cas": {
+        "from_source": false,
+        "source_revision": "v1.0.9.1"
+      },
+      "allowed_openids": [
+
+      ],
+      "mod_auth_openid": {
+        "ref": "v0.8",
+        "version": "0.8",
+        "source_url": "https://github.com/bmuller/mod_auth_openid/archive/v0.8.tar.gz",
+        "cache_dir": "/var/cache/mod_auth_openid",
+        "dblocation": "/var/cache/mod_auth_openid/mod_auth_openid.db",
+        "configure_flags": [
+
+        ]
+      },
+      "mod_fastcgi": {
+        "download_url": "http://www.fastcgi.com/dist/mod_fastcgi-current.tar.gz",
+        "install_method": "package",
+        "package": "mod_fastcgi"
+      },
+      "mod_php5": {
+        "install_method": "package",
+        "so_filename": "libphp.so"
+      },
+      "mod_ssl": {
+        "port": 443,
+        "protocol": "All -SSLv2 -SSLv3",
+        "cipher_suite": "EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA256:EECDH:+CAMELLIA128:+AES128:+SSLv3:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!PSK:!DSS:!RC4:!SEED:!IDEA:!ECDSA:kEDH:CAMELLIA128-SHA:AES128-SHA",
+        "honor_cipher_order": "On",
+        "insecure_renegotiation": "Off",
+        "strict_sni_vhost_check": "Off",
+        "session_cache": "shmcb:/var/cache/mod_ssl/scache(512000)",
+        "session_cache_timeout": 300,
+        "compression": "Off",
+        "use_stapling": "Off",
+        "stapling_responder_timeout": 5,
+        "stapling_return_responder_errors": "Off",
+        "stapling_cache": "shmcb:/var/run/ocsp(128000)",
+        "pass_phrase_dialog": "builtin",
+        "mutex": "default",
+        "directives": {
+
+        },
+        "pkg_name": "mod24_ssl"
+      }
+    },
+    "apache2": {
+      "mod_pagespeed": {
+        "package_link": "https://dl-ssl.google.com/dl/linux/direct/mod-pagespeed-stable_current_amd64.deb"
+      }
+    },
+    "yum": {
+      "main": {
+        "cachedir": "/var/cache/yum/$basearch/$releasever",
+        "distroverpkg": "system-release",
+        "alwaysprompt": null,
+        "assumeyes": null,
+        "bandwidth": null,
+        "bugtracker_url": null,
+        "clean_requirements_on_remove": null,
+        "color": null,
+        "color_list_available_downgrade": null,
+        "color_list_available_install": null,
+        "color_list_available_reinstall": null,
+        "color_list_available_upgrade": null,
+        "color_list_installed_extra": null,
+        "color_list_installed_newer": null,
+        "color_list_installed_older": null,
+        "color_list_installed_reinstall": null,
+        "color_search_match": null,
+        "color_update_installed": null,
+        "color_update_local": null,
+        "color_update_remote": null,
+        "commands": null,
+        "deltarpm": null,
+        "debuglevel": null,
+        "diskspacecheck": null,
+        "enable_group_conditionals": null,
+        "errorlevel": null,
+        "exactarch": null,
+        "exclude": null,
+        "gpgcheck": true,
+        "group_package_types": null,
+        "groupremove_leaf_only": null,
+        "history_list_view": null,
+        "history_record": null,
+        "history_record_packages": null,
+        "http_caching": null,
+        "installonly_limit": null,
+        "installonlypkgs": null,
+        "installroot": null,
+        "keepalive": null,
+        "keepcache": false,
+        "kernelpkgnames": null,
+        "localpkg_gpgcheck": false,
+        "logfile": "/var/log/yum.log",
+        "max_retries": null,
+        "mdpolicy": null,
+        "metadata_expire": null,
+        "mirrorlist_expire": null,
+        "multilib_policy": null,
+        "obsoletes": null,
+        "overwrite_groups": null,
+        "password": null,
+        "path": "/etc/yum.conf",
+        "persistdir": null,
+        "pluginconfpath": null,
+        "pluginpath": null,
+        "plugins": null,
+        "protected_multilib": null,
+        "protected_packages": null,
+        "proxy": null,
+        "proxy_password": null,
+        "proxy_username": null,
+        "recent": null,
+        "releasever": null,
+        "repo_gpgcheck": null,
+        "reposdir": null,
+        "reset_nice": null,
+        "rpmverbosity": null,
+        "showdupesfromrepos": null,
+        "skip_broken": null,
+        "ssl_check_cert_permissions": null,
+        "sslcacert": null,
+        "sslclientcert": null,
+        "sslclientkey": null,
+        "sslverify": null,
+        "syslog_device": null,
+        "syslog_facility": null,
+        "syslog_ident": null,
+        "throttle": null,
+        "timeout": null,
+        "tolerant": false,
+        "tsflags": null,
+        "username": null
+      },
+      "mysql-connectors-community": {
+        "repositoryid": "mysql-connectors-community",
+        "gpgkey": "https://raw.githubusercontent.com/chef-cookbooks/yum-mysql-community/master/files/default/mysql_pubkey.asc",
+        "description": "MySQL Connectors Community",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "baseurl": "http://repo.mysql.com/yum/mysql-connectors-community/el/6/$basearch/"
+      },
+      "mysql55-community": {
+        "repositoryid": "mysql55-community",
+        "gpgkey": "https://raw.githubusercontent.com/chef-cookbooks/yum-mysql-community/master/files/default/mysql_pubkey.asc",
+        "description": "MySQL 5.5 Community Server",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "baseurl": "http://repo.mysql.com/yum/mysql-5.5-community/el/6/$basearch/"
+      },
+      "mysql56-community": {
+        "repositoryid": "mysql56-community",
+        "gpgkey": "https://raw.githubusercontent.com/chef-cookbooks/yum-mysql-community/master/files/default/mysql_pubkey.asc",
+        "description": "MySQL 5.6 Community Server",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "baseurl": "http://repo.mysql.com/yum/mysql-5.6-community/el/6/$basearch/"
+      },
+      "mysql57-community": {
+        "repositoryid": "mysql57-community",
+        "gpgkey": "https://raw.githubusercontent.com/chef-cookbooks/yum-mysql-community/master/files/default/mysql_pubkey.asc",
+        "description": "MySQL 5.7 Community Server",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "baseurl": "http://repo.mysql.com/yum/mysql-5.7-community/el/6/$basearch/"
+      },
+      "epel-debuginfo": {
+        "repositoryid": "epel-debuginfo",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch",
+        "gpgkey": "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-source": {
+        "repositoryid": "epel-source",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch",
+        "gpgkey": "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing-debuginfo": {
+        "repositoryid": "epel-testing-debuginfo",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch",
+        "gpgkey": "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing-source": {
+        "repositoryid": "epel-testing-source",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch",
+        "gpgkey": "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel-testing": {
+        "repositoryid": "epel-testing",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch",
+        "gpgkey": "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false,
+        "make_cache": true
+      },
+      "epel": {
+        "repositoryid": "epel",
+        "description": "Extra Packages for Enterprise Linux 6 - $basearch",
+        "mirrorlist": "http://mirrors.fedoraproject.org/mirrorlist?repo=epel-6&arch=$basearch",
+        "gpgkey": "http://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-6",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "managed": true,
+        "make_cache": true
+      }
+    },
+    "chef_handler": {
+      "handler_path": "/home/ec2-user/chef-repo/localrepo/chef/local-mode-cache/handlers"
+    },
+    "windows": {
+      "allow_pending_reboots": true,
+      "allow_reboot_on_failure": false,
+      "rubyzipversion": null,
+      "reboot_timeout": 60
+    },
+    "seven_zip": {
+      "url": "http://www.7-zip.org/a/7z1514-x64.msi",
+      "checksum": "cefe1a9092d8a6be68468c33910d6206b40e934fb63cab686c5cccf369fbf712",
+      "package_name": "7-Zip 15.14 (x64 edition)"
+    },
+    "build-essential": {
+      "compile_time": false,
+      "msys2": {
+        "path": "\\msys2"
+      }
+    },
+    "iis": {
+      "home": "\\System32\\inetsrv",
+      "conf_dir": "\\System32\\inetsrv\\config",
+      "pubroot": "\\inetpub",
+      "docroot": "\\inetpub\\wwwroot",
+      "log_dir": "\\inetpub\\logs\\LogFiles",
+      "cache_dir": "\\inetpub\\temp",
+      "components": [
+
+      ],
+      "source": null
+    },
+    "xml": {
+      "compiletime": false,
+      "packages": [
+        "libxml2-devel",
+        "libxslt-devel"
+      ],
+      "nokogiri": {
+        "use_system_libraries": false,
+        "version": null
+      }
+    },
+    "yum-epel": {
+      "repositories": [
+        "epel",
+        "epel-debuginfo",
+        "epel-source",
+        "epel-testing",
+        "epel-testing-debuginfo",
+        "epel-testing-source"
+      ]
+    },
+    "php": {
+      "install_method": "package",
+      "directives": {
+
+      },
+      "bin": "php",
+      "pear": "pear",
+      "pecl": "pecl",
+      "version": "5.6.22",
+      "url": "http://us1.php.net/get",
+      "checksum": "92acc6c067f5e015a6881b4119eafec10eca11722e810f2c2083f72e17119bcf",
+      "prefix_dir": "/usr/local",
+      "enable_mod": "/usr/sbin/php5enmod",
+      "disable_mod": "/usr/sbin/php5dismod",
+      "ini": {
+        "template": "php.ini.erb",
+        "cookbook": "php"
+      },
+      "conf_dir": "/etc",
+      "ext_conf_dir": "/etc/php.d",
+      "fpm_user": "apache",
+      "fpm_group": "apache",
+      "fpm_listen_user": "apache",
+      "fpm_listen_group": "apache",
+      "ext_dir": "/usr/lib64/php/modules",
+      "src_deps": [
+        "bzip2-devel",
+        "libc-client-devel",
+        "curl-devel",
+        "freetype-devel",
+        "gmp-devel",
+        "libjpeg-devel",
+        "krb5-devel",
+        "libmcrypt-devel",
+        "libpng-devel",
+        "openssl-devel",
+        "t1lib-devel",
+        "mhash-devel"
+      ],
+      "packages": [
+        "php56",
+        "php56-devel",
+        "php-pear"
+      ],
+      "mysql": {
+        "package": "php-mysql"
+      },
+      "fpm_package": "php-fpm",
+      "fpm_pooldir": "/etc/php-fpm.d",
+      "fpm_default_conf": "/etc/php-fpm.d/www.conf",
+      "fpm_service": "php-fpm",
+      "configure_options": [
+        "--prefix=/usr/local",
+        "--with-libdir=lib64",
+        "--with-config-file-path=/etc",
+        "--with-config-file-scan-dir=/etc/php.d",
+        "--with-pear",
+        "--enable-fpm",
+        "--with-fpm-user=apache",
+        "--with-fpm-group=apache",
+        "--with-zlib",
+        "--with-openssl",
+        "--with-kerberos",
+        "--with-bz2",
+        "--with-curl",
+        "--enable-ftp",
+        "--enable-zip",
+        "--enable-exif",
+        "--with-gd",
+        "--enable-gd-native-ttf",
+        "--with-gettext",
+        "--with-gmp",
+        "--with-mhash",
+        "--with-iconv",
+        "--with-imap",
+        "--with-imap-ssl",
+        "--enable-sockets",
+        "--enable-soap",
+        "--with-xmlrpc",
+        "--with-libevent-dir",
+        "--with-mcrypt",
+        "--enable-mbstring",
+        "--with-t1lib",
+        "--with-mysql",
+        "--with-mysqli=/usr/bin/mysql_config",
+        "--with-mysql-sock",
+        "--with-sqlite3",
+        "--with-pdo-mysql",
+        "--with-pdo-sqlite"
+      ]
+    }
+  },
+  "automatic": {
+    "kernel": {
+      "name": "Linux",
+      "release": "4.4.11-23.53.amzn1.x86_64",
+      "version": "#1 SMP Wed Jun 1 22:22:50 UTC 2016",
+      "machine": "x86_64",
+      "processor": "x86_64",
+      "os": "GNU/Linux",
+      "modules": {
+        "ipv6": {
+          "size": "368254",
+          "refcount": "70"
+        },
+        "binfmt_misc": {
+          "size": "7144",
+          "refcount": "1"
+        },
+        "mousedev": {
+          "size": "11430",
+          "refcount": "0"
+        },
+        "evdev": {
+          "size": "12270",
+          "refcount": "0"
+        },
+        "acpi_cpufreq": {
+          "size": "7838",
+          "refcount": "0"
+        },
+        "psmouse": {
+          "size": "17744",
+          "refcount": "0"
+        },
+        "button": {
+          "size": "5894",
+          "refcount": "0"
+        },
+        "ext4": {
+          "size": "572497",
+          "refcount": "1"
+        },
+        "crc16": {
+          "size": "1923",
+          "refcount": "1"
+        },
+        "mbcache": {
+          "size": "9620",
+          "refcount": "1"
+        },
+        "jbd2": {
+          "size": "105184",
+          "refcount": "1"
+        },
+        "ata_piix": {
+          "size": "26804",
+          "refcount": "0"
+        },
+        "libata": {
+          "size": "225741",
+          "refcount": "1"
+        },
+        "scsi_mod": {
+          "size": "221423",
+          "refcount": "1"
+        },
+        "dm_mirror": {
+          "size": "14022",
+          "refcount": "0"
+        },
+        "dm_region_hash": {
+          "size": "11021",
+          "refcount": "1"
+        },
+        "dm_log": {
+          "size": "9651",
+          "refcount": "2"
+        },
+        "dm_mod": {
+          "size": "101560",
+          "refcount": "2"
+        }
+      }
+    },
+    "os": "linux",
+    "os_version": "4.4.11-23.53.amzn1.x86_64",
+    "cpu": {
+      "0": {
+        "vendor_id": "GenuineIntel",
+        "family": "6",
+        "model": "62",
+        "model_name": "Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz",
+        "stepping": "4",
+        "mhz": "2500.082",
+        "cache_size": "25600 KB",
+        "physical_id": "0",
+        "core_id": "0",
+        "cores": "1",
+        "flags": [
+          "fpu",
+          "vme",
+          "de",
+          "pse",
+          "tsc",
+          "msr",
+          "pae",
+          "mce",
+          "cx8",
+          "apic",
+          "sep",
+          "mtrr",
+          "pge",
+          "mca",
+          "cmov",
+          "pat",
+          "pse36",
+          "clflush",
+          "mmx",
+          "fxsr",
+          "sse",
+          "sse2",
+          "ht",
+          "syscall",
+          "nx",
+          "rdtscp",
+          "lm",
+          "constant_tsc",
+          "rep_good",
+          "nopl",
+          "xtopology",
+          "eagerfpu",
+          "pni",
+          "pclmulqdq",
+          "ssse3",
+          "cx16",
+          "pcid",
+          "sse4_1",
+          "sse4_2",
+          "x2apic",
+          "popcnt",
+          "tsc_deadline_timer",
+          "aes",
+          "xsave",
+          "avx",
+          "f16c",
+          "rdrand",
+          "hypervisor",
+          "lahf_lm",
+          "fsgsbase",
+          "smep",
+          "erms",
+          "xsaveopt"
+        ]
+      },
+      "total": 1,
+      "real": 1,
+      "cores": 1
+    },
+    "network": {
+      "interfaces": {
+        "lo": {
+          "mtu": "65536",
+          "flags": [
+            "LOOPBACK",
+            "UP",
+            "LOWER_UP"
+          ],
+          "encapsulation": "Loopback",
+          "addresses": {
+            "127.0.0.1": {
+              "family": "inet",
+              "prefixlen": "8",
+              "netmask": "255.0.0.0",
+              "scope": "Node"
+            },
+            "::1": {
+              "family": "inet6",
+              "prefixlen": "128",
+              "scope": "Node"
+            }
+          },
+          "state": "unknown",
+          "routes": [
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            },
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            },
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            },
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            },
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            },
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            },
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            },
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            },
+            {
+              "destination": "unreachable",
+              "family": "inet6",
+              "metric": "1024"
+            }
+          ]
+        },
+        "eth0": {
+          "type": "eth",
+          "number": "0",
+          "mtu": "9001",
+          "flags": [
+            "BROADCAST",
+            "MULTICAST",
+            "UP",
+            "LOWER_UP"
+          ],
+          "encapsulation": "Ethernet",
+          "addresses": {
+            "0A:86:28:4E:D7:F3": {
+              "family": "lladdr"
+            },
+            "172.31.43.12": {
+              "family": "inet",
+              "prefixlen": "20",
+              "netmask": "255.255.240.0",
+              "broadcast": "172.31.47.255",
+              "scope": "Global"
+            },
+            "fe80::886:28ff:fe4e:d7f3": {
+              "family": "inet6",
+              "prefixlen": "64",
+              "scope": "Link"
+            }
+          },
+          "state": "up",
+          "arp": {
+            "172.31.32.247": "0a:02:b6:89:ff:db",
+            "172.31.32.1": "0a:5e:2e:5c:ed:2f"
+          },
+          "routes": [
+            {
+              "destination": "default",
+              "family": "inet",
+              "via": "172.31.32.1"
+            },
+            {
+              "destination": "169.254.169.254",
+              "family": "inet"
+            },
+            {
+              "destination": "172.31.32.0/20",
+              "family": "inet",
+              "scope": "link",
+              "proto": "kernel",
+              "src": "172.31.43.12"
+            },
+            {
+              "destination": "fe80::/64",
+              "family": "inet6",
+              "metric": "256",
+              "proto": "kernel"
+            }
+          ]
+        }
+      },
+      "default_interface": "eth0",
+      "default_gateway": "172.31.32.1"
+    },
+    "counters": {
+      "network": {
+        "interfaces": {
+          "lo": {
+            "tx": {
+              "queuelen": "1",
+              "bytes": "140",
+              "packets": "2",
+              "errors": "0",
+              "drop": "0",
+              "carrier": "0",
+              "collisions": "0"
+            },
+            "rx": {
+              "bytes": "140",
+              "packets": "2",
+              "errors": "0",
+              "drop": "0",
+              "overrun": "0"
+            }
+          },
+          "eth0": {
+            "tx": {
+              "queuelen": "1000",
+              "bytes": "1427797",
+              "packets": "11587",
+              "errors": "0",
+              "drop": "0",
+              "carrier": "0",
+              "collisions": "0"
+            },
+            "rx": {
+              "bytes": "72977008",
+              "packets": "54680",
+              "errors": "0",
+              "drop": "0",
+              "overrun": "0"
+            }
+          }
+        }
+      }
+    },
+    "ipaddress": "172.31.43.12",
+    "macaddress": "0A:86:28:4E:D7:F3",
+    "ip6address": "fe80::886:28ff:fe4e:d7f3",
+    "lsb": {
+
+    },
+    "platform": "amazon",
+    "platform_version": "2016.03",
+    "platform_family": "rhel",
+    "memory": {
+      "swap": {
+        "cached": "0kB",
+        "total": "0kB",
+        "free": "0kB"
+      },
+      "total": "1019336kB",
+      "free": "330888kB",
+      "buffers": "32920kB",
+      "cached": "438880kB",
+      "active": "338696kB",
+      "inactive": "283628kB",
+      "dirty": "2208kB",
+      "writeback": "0kB",
+      "anon_pages": "150496kB",
+      "mapped": "26492kB",
+      "slab": "49244kB",
+      "slab_reclaimable": "39100kB",
+      "slab_unreclaim": "10144kB",
+      "page_tables": "6488kB",
+      "nfs_unstable": "0kB",
+      "bounce": "0kB",
+      "commit_limit": "509668kB",
+      "committed_as": "554284kB",
+      "vmalloc_total": "34359738367kB",
+      "vmalloc_used": "0kB",
+      "vmalloc_chunk": "0kB"
+    },
+    "fips": {
+      "kernel": {
+        "enabled": false
+      }
+    },
+    "filesystem": {
+      "/dev/xvda1": {
+        "kb_size": "8123812",
+        "kb_used": "2208104",
+        "kb_available": "5815460",
+        "percent_used": "28%",
+        "mount": "/",
+        "total_inodes": "524288",
+        "inodes_used": "90880",
+        "inodes_available": "433408",
+        "inodes_percent_used": "18%",
+        "fs_type": "ext4",
+        "mount_options": [
+          "rw",
+          "noatime",
+          "data=ordered"
+        ],
+        "uuid": "84691ef1-f2b5-467a-adf6-ddccbacdd703",
+        "label": "/"
+      },
+      "devtmpfs": {
+        "kb_size": "501092",
+        "kb_used": "56",
+        "kb_available": "501036",
+        "percent_used": "1%",
+        "mount": "/dev",
+        "total_inodes": "125273",
+        "inodes_used": "428",
+        "inodes_available": "124845",
+        "inodes_percent_used": "1%",
+        "fs_type": "devtmpfs",
+        "mount_options": [
+          "rw",
+          "relatime",
+          "size=501092k",
+          "nr_inodes=125273",
+          "mode=755"
+        ]
+      },
+      "tmpfs": {
+        "kb_size": "509668",
+        "kb_used": "0",
+        "kb_available": "509668",
+        "percent_used": "0%",
+        "mount": "/dev/shm",
+        "total_inodes": "127417",
+        "inodes_used": "1",
+        "inodes_available": "127416",
+        "inodes_percent_used": "1%",
+        "fs_type": "tmpfs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ]
+      },
+      "proc": {
+        "mount": "/proc",
+        "fs_type": "proc",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ]
+      },
+      "sysfs": {
+        "mount": "/sys",
+        "fs_type": "sysfs",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ]
+      },
+      "devpts": {
+        "mount": "/dev/pts",
+        "fs_type": "devpts",
+        "mount_options": [
+          "rw",
+          "relatime",
+          "gid=5",
+          "mode=620",
+          "ptmxmode=000"
+        ]
+      },
+      "none": {
+        "mount": "/proc/sys/fs/binfmt_misc",
+        "fs_type": "binfmt_misc",
+        "mount_options": [
+          "rw",
+          "relatime"
+        ]
+      }
+    },
+    "virtualization": {
+      "systems": {
+        "xen": "guest"
+      },
+      "system": "xen",
+      "role": "guest"
+    },
+    "command": {
+      "ps": "ps -ef"
+    },
+    "ohai_time": 1469544078.3503785,
+    "uptime_seconds": 972,
+    "uptime": "16 minutes 12 seconds",
+    "idletime_seconds": 891,
+    "idletime": "14 minutes 51 seconds",
+    "dmi": {
+
+    },
+    "ec2": {
+      "ami_id": "ami-50a5c523",
+      "ami_launch_index": "0",
+      "ami_manifest_path": "(unknown)",
+      "block_device_mapping_ami": "/dev/xvda",
+      "block_device_mapping_root": "/dev/xvda",
+      "hostname": "ip-172-31-43-12.eu-west-1.compute.internal",
+      "instance_action": "none",
+      "instance_id": "i-009a44219e7d05ea1",
+      "instance_type": "t2.micro",
+      "local_hostname": "ip-172-31-43-12.eu-west-1.compute.internal",
+      "local_ipv4": "172.31.43.12",
+      "mac": "0a:86:28:4e:d7:f3",
+      "metrics_vhostmd": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+      "network_interfaces_macs": {
+        "0a:86:28:4e:d7:f3": {
+          "device_number": "0",
+          "interface_id": "eni-1f4eaa40",
+          "ipv4-associations": {
+            "52.16.236.42": "172.31.43.12"
+          },
+          "local_hostname": "ip-172-31-43-12.eu-west-1.compute.internal",
+          "local_ipv4s": "172.31.43.12",
+          "mac": "0a:86:28:4e:d7:f3",
+          "owner_id": "831650818513",
+          "public_hostname": "ec2-52-16-236-42.eu-west-1.compute.amazonaws.com",
+          "public_ipv4s": "52.16.236.42",
+          "security_group_ids": "sg-789d161f",
+          "security_groups": "test-terraform",
+          "subnet_id": "subnet-d7b45d8f",
+          "subnet_ipv4_cidr_block": "172.31.32.0/20",
+          "vpc_id": "vpc-c9ee2dad",
+          "vpc_ipv4_cidr_block": "172.31.0.0/16"
+        }
+      },
+      "placement_availability_zone": "eu-west-1a",
+      "profile": "default-hvm",
+      "public_hostname": "ec2-52-16-236-42.eu-west-1.compute.amazonaws.com",
+      "public_ipv4": "52.16.236.42",
+      "public_keys_0_openssh_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC0WHE1wW5Uln7gT4uiX+kCDrnMVQna+5+IVXxtFuVIFMYSO4L1EsqrN/Z/wJ1x3bi+p75eAPi75Fd64GH4xcvGhxoeiFziTjjRVsrTzXLU71jC42Fh+FZoCuBzFhClPgVTeofE8Y7dovJ4L3g6k2tCdi/vJTpUjnFnksnqcRNHxihwblWTm6stSuQWkL3Qimhtfkx+F0LRyPwZ7skD3tTkqKwyVpSgnKuBFP2348ClvpiCFiQew8xQBodnZ+fm79WrKotOSdMu/gBezip+o1smdXZHKJDleBDYnLizhQwQBKuKujbn0T3nW4tMDh5y4cJvCjlb4Qp7DKFajs4wcrK1 keyterraform\n",
+      "reservation_id": "r-03fe7f4b60b7656d2",
+      "security_groups": [
+        "test-terraform"
+      ],
+      "services_domain": "amazonaws.com",
+      "userdata": ""
+    },
+    "etc": {
+      "passwd": {
+        "root": {
+          "dir": "/root",
+          "gid": 0,
+          "uid": 0,
+          "shell": "/bin/bash",
+          "gecos": "root"
+        },
+        "bin": {
+          "dir": "/bin",
+          "gid": 1,
+          "uid": 1,
+          "shell": "/sbin/nologin",
+          "gecos": "bin"
+        },
+        "daemon": {
+          "dir": "/sbin",
+          "gid": 2,
+          "uid": 2,
+          "shell": "/sbin/nologin",
+          "gecos": "daemon"
+        },
+        "adm": {
+          "dir": "/var/adm",
+          "gid": 4,
+          "uid": 3,
+          "shell": "/sbin/nologin",
+          "gecos": "adm"
+        },
+        "lp": {
+          "dir": "/var/spool/lpd",
+          "gid": 7,
+          "uid": 4,
+          "shell": "/sbin/nologin",
+          "gecos": "lp"
+        },
+        "sync": {
+          "dir": "/sbin",
+          "gid": 0,
+          "uid": 5,
+          "shell": "/bin/sync",
+          "gecos": "sync"
+        },
+        "shutdown": {
+          "dir": "/sbin",
+          "gid": 0,
+          "uid": 6,
+          "shell": "/sbin/shutdown",
+          "gecos": "shutdown"
+        },
+        "halt": {
+          "dir": "/sbin",
+          "gid": 0,
+          "uid": 7,
+          "shell": "/sbin/halt",
+          "gecos": "halt"
+        },
+        "mail": {
+          "dir": "/var/spool/mail",
+          "gid": 12,
+          "uid": 8,
+          "shell": "/sbin/nologin",
+          "gecos": "mail"
+        },
+        "uucp": {
+          "dir": "/var/spool/uucp",
+          "gid": 14,
+          "uid": 10,
+          "shell": "/sbin/nologin",
+          "gecos": "uucp"
+        },
+        "operator": {
+          "dir": "/root",
+          "gid": 0,
+          "uid": 11,
+          "shell": "/sbin/nologin",
+          "gecos": "operator"
+        },
+        "games": {
+          "dir": "/usr/games",
+          "gid": 100,
+          "uid": 12,
+          "shell": "/sbin/nologin",
+          "gecos": "games"
+        },
+        "gopher": {
+          "dir": "/var/gopher",
+          "gid": 30,
+          "uid": 13,
+          "shell": "/sbin/nologin",
+          "gecos": "gopher"
+        },
+        "ftp": {
+          "dir": "/var/ftp",
+          "gid": 50,
+          "uid": 14,
+          "shell": "/sbin/nologin",
+          "gecos": "FTP User"
+        },
+        "nobody": {
+          "dir": "/",
+          "gid": 99,
+          "uid": 99,
+          "shell": "/sbin/nologin",
+          "gecos": "Nobody"
+        },
+        "rpc": {
+          "dir": "/var/cache/rpcbind",
+          "gid": 32,
+          "uid": 32,
+          "shell": "/sbin/nologin",
+          "gecos": "Rpcbind Daemon"
+        },
+        "ntp": {
+          "dir": "/etc/ntp",
+          "gid": 38,
+          "uid": 38,
+          "shell": "/sbin/nologin",
+          "gecos": ""
+        },
+        "saslauth": {
+          "dir": "/var/empty/saslauth",
+          "gid": 76,
+          "uid": 499,
+          "shell": "/sbin/nologin",
+          "gecos": "\"Saslauthd user\""
+        },
+        "mailnull": {
+          "dir": "/var/spool/mqueue",
+          "gid": 47,
+          "uid": 47,
+          "shell": "/sbin/nologin",
+          "gecos": ""
+        },
+        "smmsp": {
+          "dir": "/var/spool/mqueue",
+          "gid": 51,
+          "uid": 51,
+          "shell": "/sbin/nologin",
+          "gecos": ""
+        },
+        "rpcuser": {
+          "dir": "/var/lib/nfs",
+          "gid": 29,
+          "uid": 29,
+          "shell": "/sbin/nologin",
+          "gecos": "RPC Service User"
+        },
+        "nfsnobody": {
+          "dir": "/var/lib/nfs",
+          "gid": 65534,
+          "uid": 65534,
+          "shell": "/sbin/nologin",
+          "gecos": "Anonymous NFS User"
+        },
+        "sshd": {
+          "dir": "/var/empty/sshd",
+          "gid": 74,
+          "uid": 74,
+          "shell": "/sbin/nologin",
+          "gecos": "Privilege-separated SSH"
+        },
+        "dbus": {
+          "dir": "/",
+          "gid": 81,
+          "uid": 81,
+          "shell": "/sbin/nologin",
+          "gecos": "System message bus"
+        },
+        "ec2-user": {
+          "dir": "/home/ec2-user",
+          "gid": 500,
+          "uid": 500,
+          "shell": "/bin/bash",
+          "gecos": "EC2 Default User"
+        },
+        "apache": {
+          "dir": "/var/www",
+          "gid": 48,
+          "uid": 48,
+          "shell": "/sbin/nologin",
+          "gecos": "Apache"
+        },
+        "mysql": {
+          "dir": "/var/lib/mysql",
+          "gid": 27,
+          "uid": 27,
+          "shell": "/bin/bash",
+          "gecos": "MySQL Server"
+        }
+      },
+      "group": {
+        "root": {
+          "gid": 0,
+          "members": [
+
+          ]
+        },
+        "bin": {
+          "gid": 1,
+          "members": [
+            "bin",
+            "daemon"
+          ]
+        },
+        "daemon": {
+          "gid": 2,
+          "members": [
+            "bin",
+            "daemon"
+          ]
+        },
+        "sys": {
+          "gid": 3,
+          "members": [
+            "bin",
+            "adm"
+          ]
+        },
+        "adm": {
+          "gid": 4,
+          "members": [
+            "adm",
+            "daemon"
+          ]
+        },
+        "tty": {
+          "gid": 5,
+          "members": [
+
+          ]
+        },
+        "disk": {
+          "gid": 6,
+          "members": [
+
+          ]
+        },
+        "lp": {
+          "gid": 7,
+          "members": [
+            "daemon"
+          ]
+        },
+        "mem": {
+          "gid": 8,
+          "members": [
+
+          ]
+        },
+        "kmem": {
+          "gid": 9,
+          "members": [
+
+          ]
+        },
+        "wheel": {
+          "gid": 10,
+          "members": [
+            "ec2-user"
+          ]
+        },
+        "mail": {
+          "gid": 12,
+          "members": [
+            "mail"
+          ]
+        },
+        "uucp": {
+          "gid": 14,
+          "members": [
+
+          ]
+        },
+        "man": {
+          "gid": 15,
+          "members": [
+
+          ]
+        },
+        "games": {
+          "gid": 20,
+          "members": [
+
+          ]
+        },
+        "gopher": {
+          "gid": 30,
+          "members": [
+
+          ]
+        },
+        "video": {
+          "gid": 39,
+          "members": [
+
+          ]
+        },
+        "dip": {
+          "gid": 40,
+          "members": [
+
+          ]
+        },
+        "ftp": {
+          "gid": 50,
+          "members": [
+
+          ]
+        },
+        "lock": {
+          "gid": 54,
+          "members": [
+
+          ]
+        },
+        "audio": {
+          "gid": 63,
+          "members": [
+
+          ]
+        },
+        "nobody": {
+          "gid": 99,
+          "members": [
+
+          ]
+        },
+        "users": {
+          "gid": 100,
+          "members": [
+
+          ]
+        },
+        "utmp": {
+          "gid": 22,
+          "members": [
+
+          ]
+        },
+        "utempter": {
+          "gid": 35,
+          "members": [
+
+          ]
+        },
+        "rpc": {
+          "gid": 32,
+          "members": [
+
+          ]
+        },
+        "cdrom": {
+          "gid": 11,
+          "members": [
+
+          ]
+        },
+        "tape": {
+          "gid": 33,
+          "members": [
+
+          ]
+        },
+        "dialout": {
+          "gid": 18,
+          "members": [
+
+          ]
+        },
+        "floppy": {
+          "gid": 19,
+          "members": [
+
+          ]
+        },
+        "ssh_keys": {
+          "gid": 499,
+          "members": [
+
+          ]
+        },
+        "cgred": {
+          "gid": 498,
+          "members": [
+
+          ]
+        },
+        "ntp": {
+          "gid": 38,
+          "members": [
+
+          ]
+        },
+        "saslauth": {
+          "gid": 76,
+          "members": [
+
+          ]
+        },
+        "mailnull": {
+          "gid": 47,
+          "members": [
+
+          ]
+        },
+        "smmsp": {
+          "gid": 51,
+          "members": [
+
+          ]
+        },
+        "rpcuser": {
+          "gid": 29,
+          "members": [
+
+          ]
+        },
+        "nfsnobody": {
+          "gid": 65534,
+          "members": [
+
+          ]
+        },
+        "sshd": {
+          "gid": 74,
+          "members": [
+
+          ]
+        },
+        "dbus": {
+          "gid": 81,
+          "members": [
+
+          ]
+        },
+        "screen": {
+          "gid": 84,
+          "members": [
+
+          ]
+        },
+        "ec2-user": {
+          "gid": 500,
+          "members": [
+
+          ]
+        },
+        "apache": {
+          "gid": 48,
+          "members": [
+
+          ]
+        },
+        "mysql": {
+          "gid": 27,
+          "members": [
+
+          ]
+        }
+      }
+    },
+    "current_user": "root",
+    "cloud": {
+      "public_ips": [
+        "52.16.236.42"
+      ],
+      "private_ips": [
+        "172.31.43.12"
+      ],
+      "public_ipv4": "52.16.236.42",
+      "public_hostname": "ec2-52-16-236-42.eu-west-1.compute.amazonaws.com",
+      "local_ipv4": "172.31.43.12",
+      "local_hostname": "ip-172-31-43-12.eu-west-1.compute.internal",
+      "provider": "ec2"
+    },
+    "languages": {
+      "python": {
+        "version": "2.7.10",
+        "builddate": "Dec 8 2015, 18:25:23"
+      },
+      "ruby": {
+        "platform": "x86_64-linux",
+        "version": "2.0.0",
+        "release_date": "2015-12-16",
+        "target": "x86_64-amazon-linux-gnu",
+        "target_cpu": "x86_64",
+        "target_vendor": "amazon",
+        "target_os": "linux",
+        "host": "x86_64-redhat-linux-gnu",
+        "host_cpu": "x86_64",
+        "host_os": "linux-gnu",
+        "host_vendor": "redhat",
+        "bin_dir": "/usr/bin",
+        "ruby_bin": "/usr/bin/ruby2.0",
+        "gems_dir": "/usr/local/share/ruby/gems/2.0",
+        "gem_bin": "/usr/bin/gem2.0"
+      },
+      "java": {
+        "version": "1.7.0_101",
+        "hotspot": {
+          "name": "OpenJDK 64-Bit Server VM",
+          "build": "24.95-b01, mixed mode"
+        }
+      },
+      "lua": {
+        "version": "5.1.4"
+      },
+      "c": {
+        "glibc": {
+          "version": "2.17",
+          "description": "GNU C Library (GNU libc) stable release version 2.17, by Roland McGrath et al."
+        }
+      },
+      "perl": {
+        "version": "5.16.3",
+        "archname": "x86_64-linux-thread-multi"
+      }
+    },
+    "filesystem2": {
+      "by_device": {
+        "/dev/xvda1": {
+          "kb_size": "8123812",
+          "kb_used": "2208104",
+          "kb_available": "5815460",
+          "percent_used": "28%",
+          "total_inodes": "524288",
+          "inodes_used": "90880",
+          "inodes_available": "433408",
+          "inodes_percent_used": "18%",
+          "fs_type": "ext4",
+          "mount_options": [
+            "rw",
+            "noatime",
+            "data=ordered"
+          ],
+          "uuid": "84691ef1-f2b5-467a-adf6-ddccbacdd703",
+          "label": "/",
+          "mounts": [
+            "/"
+          ]
+        },
+        "devtmpfs": {
+          "kb_size": "501092",
+          "kb_used": "56",
+          "kb_available": "501036",
+          "percent_used": "1%",
+          "total_inodes": "125273",
+          "inodes_used": "428",
+          "inodes_available": "124845",
+          "inodes_percent_used": "1%",
+          "fs_type": "devtmpfs",
+          "mount_options": [
+            "rw",
+            "relatime",
+            "size=501092k",
+            "nr_inodes=125273",
+            "mode=755"
+          ],
+          "mounts": [
+            "/dev"
+          ]
+        },
+        "tmpfs": {
+          "kb_size": "509668",
+          "kb_used": "0",
+          "kb_available": "509668",
+          "percent_used": "0%",
+          "total_inodes": "127417",
+          "inodes_used": "1",
+          "inodes_available": "127416",
+          "inodes_percent_used": "1%",
+          "fs_type": "tmpfs",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "mounts": [
+            "/dev/shm"
+          ]
+        },
+        "proc": {
+          "fs_type": "proc",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "mounts": [
+            "/proc"
+          ]
+        },
+        "sysfs": {
+          "fs_type": "sysfs",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "mounts": [
+            "/sys"
+          ]
+        },
+        "devpts": {
+          "fs_type": "devpts",
+          "mount_options": [
+            "rw",
+            "relatime",
+            "gid=5",
+            "mode=620",
+            "ptmxmode=000"
+          ],
+          "mounts": [
+            "/dev/pts"
+          ]
+        },
+        "none": {
+          "fs_type": "binfmt_misc",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "mounts": [
+            "/proc/sys/fs/binfmt_misc"
+          ]
+        },
+        "/dev/xvda": {
+
+        }
+      },
+      "by_mountpoint": {
+        "/": {
+          "kb_size": "8123812",
+          "kb_used": "2208104",
+          "kb_available": "5815460",
+          "percent_used": "28%",
+          "total_inodes": "524288",
+          "inodes_used": "90880",
+          "inodes_available": "433408",
+          "inodes_percent_used": "18%",
+          "fs_type": "ext4",
+          "mount_options": [
+            "rw",
+            "noatime",
+            "data=ordered"
+          ],
+          "uuid": "84691ef1-f2b5-467a-adf6-ddccbacdd703",
+          "label": "/",
+          "devices": [
+            "/dev/xvda1"
+          ]
+        },
+        "/dev": {
+          "kb_size": "501092",
+          "kb_used": "56",
+          "kb_available": "501036",
+          "percent_used": "1%",
+          "total_inodes": "125273",
+          "inodes_used": "428",
+          "inodes_available": "124845",
+          "inodes_percent_used": "1%",
+          "fs_type": "devtmpfs",
+          "mount_options": [
+            "rw",
+            "relatime",
+            "size=501092k",
+            "nr_inodes=125273",
+            "mode=755"
+          ],
+          "devices": [
+            "devtmpfs"
+          ]
+        },
+        "/dev/shm": {
+          "kb_size": "509668",
+          "kb_used": "0",
+          "kb_available": "509668",
+          "percent_used": "0%",
+          "total_inodes": "127417",
+          "inodes_used": "1",
+          "inodes_available": "127416",
+          "inodes_percent_used": "1%",
+          "fs_type": "tmpfs",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "devices": [
+            "tmpfs"
+          ]
+        },
+        "/proc": {
+          "fs_type": "proc",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "devices": [
+            "proc"
+          ]
+        },
+        "/sys": {
+          "fs_type": "sysfs",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "devices": [
+            "sysfs"
+          ]
+        },
+        "/dev/pts": {
+          "fs_type": "devpts",
+          "mount_options": [
+            "rw",
+            "relatime",
+            "gid=5",
+            "mode=620",
+            "ptmxmode=000"
+          ],
+          "devices": [
+            "devpts"
+          ]
+        },
+        "/proc/sys/fs/binfmt_misc": {
+          "fs_type": "binfmt_misc",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ],
+          "devices": [
+            "none"
+          ]
+        }
+      },
+      "by_pair": {
+        "/dev/xvda1,/": {
+          "device": "/dev/xvda1",
+          "kb_size": "8123812",
+          "kb_used": "2208104",
+          "kb_available": "5815460",
+          "percent_used": "28%",
+          "mount": "/",
+          "total_inodes": "524288",
+          "inodes_used": "90880",
+          "inodes_available": "433408",
+          "inodes_percent_used": "18%",
+          "fs_type": "ext4",
+          "mount_options": [
+            "rw",
+            "noatime",
+            "data=ordered"
+          ],
+          "uuid": "84691ef1-f2b5-467a-adf6-ddccbacdd703",
+          "label": "/"
+        },
+        "devtmpfs,/dev": {
+          "device": "devtmpfs",
+          "kb_size": "501092",
+          "kb_used": "56",
+          "kb_available": "501036",
+          "percent_used": "1%",
+          "mount": "/dev",
+          "total_inodes": "125273",
+          "inodes_used": "428",
+          "inodes_available": "124845",
+          "inodes_percent_used": "1%",
+          "fs_type": "devtmpfs",
+          "mount_options": [
+            "rw",
+            "relatime",
+            "size=501092k",
+            "nr_inodes=125273",
+            "mode=755"
+          ]
+        },
+        "tmpfs,/dev/shm": {
+          "device": "tmpfs",
+          "kb_size": "509668",
+          "kb_used": "0",
+          "kb_available": "509668",
+          "percent_used": "0%",
+          "mount": "/dev/shm",
+          "total_inodes": "127417",
+          "inodes_used": "1",
+          "inodes_available": "127416",
+          "inodes_percent_used": "1%",
+          "fs_type": "tmpfs",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ]
+        },
+        "proc,/proc": {
+          "device": "proc",
+          "mount": "/proc",
+          "fs_type": "proc",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ]
+        },
+        "sysfs,/sys": {
+          "device": "sysfs",
+          "mount": "/sys",
+          "fs_type": "sysfs",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ]
+        },
+        "devpts,/dev/pts": {
+          "device": "devpts",
+          "mount": "/dev/pts",
+          "fs_type": "devpts",
+          "mount_options": [
+            "rw",
+            "relatime",
+            "gid=5",
+            "mode=620",
+            "ptmxmode=000"
+          ]
+        },
+        "none,/proc/sys/fs/binfmt_misc": {
+          "device": "none",
+          "mount": "/proc/sys/fs/binfmt_misc",
+          "fs_type": "binfmt_misc",
+          "mount_options": [
+            "rw",
+            "relatime"
+          ]
+        },
+        "/dev/xvda,": {
+          "device": "/dev/xvda"
+        }
+      }
+    },
+    "block_device": {
+      "xvda": {
+        "size": "16777216",
+        "removable": "0",
+        "rotational": "0"
+      }
+    },
+    "chef_packages": {
+      "ohai": {
+        "version": "8.16.0",
+        "ohai_root": "/opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/ohai-8.16.0/lib/ohai"
+      },
+      "chef": {
+        "version": "12.11.18",
+        "chef_root": "/opt/chefdk/embedded/lib/ruby/gems/2.1.0/gems/chef-12.11.18/lib"
+      }
+    },
+    "init_package": "init",
+    "packages": {
+      "nss-softokn": {
+        "version": "3.16.2.3",
+        "release": "14.2.38.amzn1"
+      },
+      "basesystem": {
+        "version": "10.0",
+        "release": "4.9.amzn1"
+      },
+      "pcre": {
+        "version": "8.21",
+        "release": "7.7.amzn1"
+      },
+      "dejavu-fonts-common": {
+        "version": "2.33",
+        "release": "6.6.amzn1"
+      },
+      "findutils": {
+        "version": "4.4.2",
+        "release": "6.9.amzn1"
+      },
+      "mailcap": {
+        "version": "2.1.31",
+        "release": "2.7.amzn1"
+      },
+      "psmisc": {
+        "version": "22.20",
+        "release": "8.12.amzn1"
+      },
+      "libgcc48": {
+        "version": "4.8.3",
+        "release": "9.109.amzn1"
+      },
+      "libyaml": {
+        "version": "0.1.6",
+        "release": "6.7.amzn1"
+      },
+      "bash": {
+        "version": "4.2.46",
+        "release": "19.35.amzn1"
+      },
+      "libSM": {
+        "version": "1.2.1",
+        "release": "2.6.amzn1"
+      },
+      "info": {
+        "version": "5.1",
+        "release": "4.10.amzn1"
+      },
+      "perl-parent": {
+        "version": "0.225",
+        "release": "244.5.amzn1"
+      },
+      "db4": {
+        "version": "4.7.25",
+        "release": "18.11.amzn1"
+      },
+      "perl-Pod-Escapes": {
+        "version": "1.04",
+        "release": "283.37.amzn1"
+      },
+      "sed": {
+        "version": "4.2.1",
+        "release": "10.10.amzn1"
+      },
+      "perl-macros": {
+        "version": "5.16.3",
+        "release": "283.37.amzn1"
+      },
+      "nspr": {
+        "version": "4.11.0",
+        "release": "1.37.amzn1"
+      },
+      "perl-Filter": {
+        "version": "1.49",
+        "release": "3.5.amzn1"
+      },
+      "gawk": {
+        "version": "3.1.7",
+        "release": "10.10.amzn1"
+      },
+      "perl-Socket": {
+        "version": "2.010",
+        "release": "3.5.amzn1"
+      },
+      "libacl": {
+        "version": "2.2.49",
+        "release": "6.11.amzn1"
+      },
+      "perl-Carp": {
+        "version": "1.26",
+        "release": "244.5.amzn1"
+      },
+      "elfutils-libelf": {
+        "version": "0.163",
+        "release": "3.18.amzn1"
+      },
+      "perl-Getopt-Long": {
+        "version": "2.40",
+        "release": "2.5.amzn1"
+      },
+      "perl-Digest-MD5": {
+        "version": "2.52",
+        "release": "3.5.amzn1"
+      },
+      "libidn": {
+        "version": "1.18",
+        "release": "2.8.amzn1"
+      },
+      "file": {
+        "version": "5.22",
+        "release": "4.31.amzn1"
+      },
+      "dbus-libs": {
+        "version": "1.6.12",
+        "release": "8.27.amzn1"
+      },
+      "vim-minimal": {
+        "version": "7.4.1848",
+        "release": "1.41.amzn1"
+      },
+      "pkgconfig": {
+        "version": "0.27.1",
+        "release": "2.7.amzn1"
+      },
+      "gdisk": {
+        "version": "0.8.10",
+        "release": "1.5.amzn1"
+      },
+      "libutempter": {
+        "version": "1.1.5",
+        "release": "4.1.6.amzn1"
+      },
+      "libss": {
+        "version": "1.42.12",
+        "release": "4.40.amzn1"
+      },
+      "grep": {
+        "version": "2.20",
+        "release": "1.16.amzn1"
+      },
+      "procmail": {
+        "version": "3.22",
+        "release": "25.1.6.amzn1"
+      },
+      "libfontenc": {
+        "version": "1.0.5",
+        "release": "2.6.amzn1"
+      },
+      "libxcb": {
+        "version": "1.8.1",
+        "release": "1.18.amzn1"
+      },
+      "libedit": {
+        "version": "2.11",
+        "release": "4.20080712cvs.1.6.amzn1"
+      },
+      "ethtool": {
+        "version": "3.15",
+        "release": "2.27.amzn1"
+      },
+      "libICE": {
+        "version": "1.0.6",
+        "release": "1.4.amzn1"
+      },
+      "coreutils": {
+        "version": "8.22",
+        "release": "15.52.amzn1"
+      },
+      "p11-kit-trust": {
+        "version": "0.18.5",
+        "release": "2.3.amzn1"
+      },
+      "cracklib": {
+        "version": "2.8.16",
+        "release": "4.14.amzn1"
+      },
+      "perl-HTTP-Tiny": {
+        "version": "0.033",
+        "release": "3.6.amzn1"
+      },
+      "libtirpc": {
+        "version": "0.2.4",
+        "release": "0.3.13.amzn1"
+      },
+      "perl-Encode": {
+        "version": "2.51",
+        "release": "7.5.amzn1"
+      },
+      "ruby20-irb": {
+        "version": "2.0.0.648",
+        "release": "1.29.amzn1"
+      },
+      "perl-libs": {
+        "version": "5.16.3",
+        "release": "283.37.amzn1"
+      },
+      "python27-imaging": {
+        "version": "1.1.6",
+        "release": "19.9.amzn1"
+      },
+      "perl-Storable": {
+        "version": "2.45",
+        "release": "3.5.amzn1"
+      },
+      "yum-metadata-parser": {
+        "version": "1.1.4",
+        "release": "8.12.amzn1"
+      },
+      "perl-Pod-Simple": {
+        "version": "3.28",
+        "release": "4.6.amzn1"
+      },
+      "python27-babel": {
+        "version": "0.9.4",
+        "release": "5.1.8.amzn1"
+      },
+      "perl-File-Temp": {
+        "version": "0.23.01",
+        "release": "3.5.amzn1"
+      },
+      "python27-jsonpointer": {
+        "version": "1.0",
+        "release": "3.4.amzn1"
+      },
+      "perl": {
+        "version": "5.16.3",
+        "release": "283.37.amzn1"
+      },
+      "python27-lockfile": {
+        "version": "0.8",
+        "release": "3.5.amzn1"
+      },
+      "libnih": {
+        "version": "1.0.1",
+        "release": "7.8.amzn1"
+      },
+      "alsa-lib": {
+        "version": "1.0.22",
+        "release": "3.9.amzn1"
+      },
+      "rmt": {
+        "version": "0.4",
+        "release": "0.6.b42.7.amzn1"
+      },
+      "less": {
+        "version": "436",
+        "release": "13.12.amzn1"
+      },
+      "rsync": {
+        "version": "3.0.6",
+        "release": "12.13.amzn1"
+      },
+      "apr-util": {
+        "version": "1.4.1",
+        "release": "4.17.amzn1"
+      },
+      "bzip2": {
+        "version": "1.0.6",
+        "release": "8.12.amzn1"
+      },
+      "libpng": {
+        "version": "1.2.49",
+        "release": "2.14.amzn1"
+      },
+      "libnl": {
+        "version": "1.1.4",
+        "release": "2.10.amzn1"
+      },
+      "git": {
+        "version": "2.7.4",
+        "release": "1.47.amzn1"
+      },
+      "libXi": {
+        "version": "1.7.2",
+        "release": "2.2.9.amzn1"
+      },
+      "httpd24-tools": {
+        "version": "2.4.23",
+        "release": "1.65.amzn1"
+      },
+      "hesiod": {
+        "version": "3.1.0",
+        "release": "19.6.amzn1"
+      },
+      "python27-libs": {
+        "version": "2.7.10",
+        "release": "4.120.amzn1"
+      },
+      "cracklib-dicts": {
+        "version": "2.8.16",
+        "release": "4.14.amzn1"
+      },
+      "perl-Thread-Queue": {
+        "version": "3.02",
+        "release": "2.5.amzn1"
+      },
+      "python27-kitchen": {
+        "version": "1.1.1",
+        "release": "5.6.amzn1"
+      },
+      "rubygem20-rdoc": {
+        "version": "4.2.2",
+        "release": "1.43.amzn1"
+      },
+      "python27-devel": {
+        "version": "2.7.10",
+        "release": "4.120.amzn1"
+      },
+      "python27-configobj": {
+        "version": "4.7.2",
+        "release": "7.15.amzn1"
+      },
+      "python27-urllib3": {
+        "version": "1.8.2",
+        "release": "1.5.amzn1"
+      },
+      "python27-rsa": {
+        "version": "3.4.1",
+        "release": "1.8.amzn1"
+      },
+      "bind-libs": {
+        "version": "9.8.2",
+        "release": "0.37.rc1.45.amzn1"
+      },
+      "mysql-community-client": {
+        "version": "5.5.50",
+        "release": "2.el6"
+      },
+      "java-1.7.0-openjdk": {
+        "version": "1.7.0.101",
+        "release": "2.6.6.1.67.amzn1"
+      },
+      "perl-IO-Compress": {
+        "version": "2.061",
+        "release": "2.12.amzn1"
+      },
+      "hwdata": {
+        "version": "0.233",
+        "release": "14.1.18.amzn1"
+      },
+      "libssh2": {
+        "version": "1.4.2",
+        "release": "2.13.amzn1"
+      },
+      "rpm": {
+        "version": "4.11.2",
+        "release": "2.73.amzn1"
+      },
+      "udev": {
+        "version": "173",
+        "release": "4.13.amzn1"
+      },
+      "device-mapper-event": {
+        "version": "1.02.93",
+        "release": "3.26.amzn1"
+      },
+      "cloud-disk-utils": {
+        "version": "0.27",
+        "release": "1.5.amzn1"
+      },
+      "python27-urlgrabber": {
+        "version": "3.9.1",
+        "release": "9.13.amzn1"
+      },
+      "python27-pygpgme": {
+        "version": "0.3",
+        "release": "9.12.amzn1"
+      },
+      "yum-plugin-upgrade-helper": {
+        "version": "1.1.31",
+        "release": "29.26.amzn1"
+      },
+      "libsemanage": {
+        "version": "2.1.6",
+        "release": "3.13.amzn1"
+      },
+      "iputils": {
+        "version": "20121221",
+        "release": "7.13.amzn1"
+      },
+      "dracut": {
+        "version": "004",
+        "release": "336.28.amzn1"
+      },
+      "rsyslog": {
+        "version": "5.8.10",
+        "release": "9.26.amzn1"
+      },
+      "cronie-anacron": {
+        "version": "1.4.4",
+        "release": "12.6.amzn1"
+      },
+      "dmraid": {
+        "version": "1.0.0.rc16",
+        "release": "11.8.amzn1"
+      },
+      "nfs-utils": {
+        "version": "1.3.0",
+        "release": "0.21.amzn1"
+      },
+      "dracut-modules-growroot": {
+        "version": "0.20",
+        "release": "1.5.amzn1"
+      },
+      "fipscheck-lib": {
+        "version": "1.3.1",
+        "release": "3.13.amzn1"
+      },
+      "openssh-clients": {
+        "version": "6.6.1p1",
+        "release": "25.61.amzn1"
+      },
+      "libevent": {
+        "version": "2.0.18",
+        "release": "1.11.amzn1"
+      },
+      "dbus": {
+        "version": "1.6.12",
+        "release": "8.27.amzn1"
+      },
+      "libcurl": {
+        "version": "7.40.0",
+        "release": "8.57.amzn1"
+      },
+      "acpid": {
+        "version": "1.0.10",
+        "release": "2.1.6.amzn1"
+      },
+      "rpm-libs": {
+        "version": "4.11.2",
+        "release": "2.73.amzn1"
+      },
+      "cloud-init": {
+        "version": "0.7.6",
+        "release": "2.11.amzn1"
+      },
+      "openldap": {
+        "version": "2.4.40",
+        "release": "7.28.amzn1"
+      },
+      "sysfsutils": {
+        "version": "2.1.0",
+        "release": "7.10.amzn1"
+      },
+      "util-linux": {
+        "version": "2.23.2",
+        "release": "22.26.amzn1"
+      },
+      "epel-release": {
+        "version": "6",
+        "release": "8.9.amzn1"
+      },
+      "device-mapper-libs": {
+        "version": "1.02.93",
+        "release": "3.26.amzn1"
+      },
+      "cryptsetup": {
+        "version": "1.6.6",
+        "release": "3.21.amzn1"
+      },
+      "device-mapper-event-libs": {
+        "version": "1.02.93",
+        "release": "3.26.amzn1"
+      },
+      "parted": {
+        "version": "2.1",
+        "release": "21.18.amzn1"
+      },
+      "lvm2-libs": {
+        "version": "2.02.115",
+        "release": "3.26.amzn1"
+      },
+      "passwd": {
+        "version": "0.79",
+        "release": "4.13.amzn1"
+      },
+      "kpartx": {
+        "version": "0.4.9",
+        "release": "72.8.amzn1"
+      },
+      "pciutils": {
+        "version": "3.1.10",
+        "release": "4.11.amzn1"
+      },
+      "libnfsidmap": {
+        "version": "0.25",
+        "release": "11.10.amzn1"
+      },
+      "aws-apitools-mon": {
+        "version": "1.0.20.0",
+        "release": "1.0.amzn1"
+      },
+      "python27-pycurl": {
+        "version": "7.19.0",
+        "release": "17.12.amzn1"
+      },
+      "aws-apitools-elb": {
+        "version": "1.0.35.0",
+        "release": "1.0.amzn1"
+      },
+      "pth": {
+        "version": "2.0.7",
+        "release": "9.3.7.amzn1"
+      },
+      "grub": {
+        "version": "0.97",
+        "release": "94.30.amzn1"
+      },
+      "gpgme": {
+        "version": "1.4.3",
+        "release": "5.15.amzn1"
+      },
+      "aws-cfn-bootstrap": {
+        "version": "1.4",
+        "release": "11.6.amzn1"
+      },
+      "rpm-build-libs": {
+        "version": "4.11.2",
+        "release": "2.73.amzn1"
+      },
+      "python27-boto": {
+        "version": "2.39.0",
+        "release": "1.0.amzn1"
+      },
+      "yum": {
+        "version": "3.4.3",
+        "release": "137.65.amzn1"
+      },
+      "ruby": {
+        "version": "2.0",
+        "release": "0.3.amzn1"
+      },
+      "yum-plugin-priorities": {
+        "version": "1.1.31",
+        "release": "29.26.amzn1"
+      },
+      "at": {
+        "version": "3.1.10",
+        "release": "44.13.amzn1"
+      },
+      "ustr": {
+        "version": "1.0.4",
+        "release": "9.1.6.amzn1"
+      },
+      "pam_ccreds": {
+        "version": "10",
+        "release": "4.9.amzn1"
+      },
+      "libpipeline": {
+        "version": "1.2.3",
+        "release": "3.3.amzn1"
+      },
+      "vim-enhanced": {
+        "version": "7.4.1848",
+        "release": "1.41.amzn1"
+      },
+      "mingetty": {
+        "version": "1.08",
+        "release": "5.9.amzn1"
+      },
+      "audit": {
+        "version": "2.4.1",
+        "release": "5.27.amzn1"
+      },
+      "initscripts": {
+        "version": "9.03.49",
+        "release": "1.34.amzn1"
+      },
+      "wget": {
+        "version": "1.17.1",
+        "release": "1.17.amzn1"
+      },
+      "kbd": {
+        "version": "1.15",
+        "release": "11.4.amzn1"
+      },
+      "dump": {
+        "version": "0.4",
+        "release": "0.6.b42.7.amzn1"
+      },
+      "kernel": {
+        "version": "4.4.11",
+        "release": "23.53.amzn1"
+      },
+      "policycoreutils": {
+        "version": "2.1.12",
+        "release": "5.23.amzn1"
+      },
+      "nc": {
+        "version": "1.84",
+        "release": "24.8.amzn1"
+      },
+      "ntpdate": {
+        "version": "4.2.6p5",
+        "release": "40.30.amzn1"
+      },
+      "cyrus-sasl-plain": {
+        "version": "2.1.23",
+        "release": "13.16.amzn1"
+      },
+      "sendmail": {
+        "version": "8.14.4",
+        "release": "8.12.amzn1"
+      },
+      "attr": {
+        "version": "2.4.46",
+        "release": "12.10.amzn1"
+      },
+      "cronie": {
+        "version": "1.4.4",
+        "release": "12.6.amzn1"
+      },
+      "unzip": {
+        "version": "6.0",
+        "release": "2.9.amzn1"
+      },
+      "sgpio": {
+        "version": "1.2.0.10",
+        "release": "5.7.amzn1"
+      },
+      "ed": {
+        "version": "1.1",
+        "release": "3.3.8.amzn1"
+      },
+      "dmraid-events": {
+        "version": "1.0.0.rc16",
+        "release": "11.8.amzn1"
+      },
+      "zip": {
+        "version": "3.0",
+        "release": "1.10.amzn1"
+      },
+      "quota": {
+        "version": "4.00",
+        "release": "7.18.amzn1"
+      },
+      "libaio": {
+        "version": "0.3.109",
+        "release": "12.8.amzn1"
+      },
+      "ntp": {
+        "version": "4.2.6p5",
+        "release": "40.30.amzn1"
+      },
+      "rootfiles": {
+        "version": "8.1",
+        "release": "6.1.8.amzn1"
+      },
+      "irqbalance": {
+        "version": "1.0.8",
+        "release": "1.23.amzn1"
+      },
+      "man-pages": {
+        "version": "4.04",
+        "release": "2.15.amzn1"
+      },
+      "openssh-server": {
+        "version": "6.6.1p1",
+        "release": "25.61.amzn1"
+      },
+      "kmod-libs": {
+        "version": "14",
+        "release": "10.10.amzn1"
+      },
+      "ec2-net-utils": {
+        "version": "0.4",
+        "release": "1.25.amzn1"
+      },
+      "libpsl": {
+        "version": "0.6.2",
+        "release": "1.2.amzn1"
+      },
+      "mdadm": {
+        "version": "3.2.6",
+        "release": "7.32.amzn1"
+      },
+      "iproute": {
+        "version": "4.4.0",
+        "release": "3.23.amzn1"
+      },
+      "dhclient": {
+        "version": "4.1.1",
+        "release": "43.P1.24.amzn1"
+      },
+      "diffutils": {
+        "version": "3.3",
+        "release": "4.15.amzn1"
+      },
+      "rng-tools": {
+        "version": "5",
+        "release": "7.12.amzn1"
+      },
+      "dejavu-sans-fonts": {
+        "version": "2.33",
+        "release": "6.6.amzn1"
+      },
+      "man-db": {
+        "version": "2.6.3",
+        "release": "9.3.amzn1"
+      },
+      "ncurses": {
+        "version": "5.7",
+        "release": "3.20090208.13.amzn1"
+      },
+      "yum-utils": {
+        "version": "1.1.31",
+        "release": "29.26.amzn1"
+      },
+      "newt": {
+        "version": "0.52.11",
+        "release": "3.11.amzn1"
+      },
+      "lvm2": {
+        "version": "2.02.115",
+        "release": "3.26.amzn1"
+      },
+      "libXext": {
+        "version": "1.3.2",
+        "release": "2.1.10.amzn1"
+      },
+      "aws-amitools-ec2": {
+        "version": "1.5.7",
+        "release": "1.0.amzn1"
+      },
+      "giflib": {
+        "version": "4.1.6",
+        "release": "3.1.6.amzn1"
+      },
+      "sudo": {
+        "version": "1.8.6p3",
+        "release": "20.22.amzn1"
+      },
+      "autogen-libopts": {
+        "version": "5.18",
+        "release": "5.8.amzn1"
+      },
+      "aws-apitools-as": {
+        "version": "1.0.61.6",
+        "release": "1.0.amzn1"
+      },
+      "libverto": {
+        "version": "0.2.5",
+        "release": "4.9.amzn1"
+      },
+      "aws-apitools-ec2": {
+        "version": "1.7.3.0",
+        "release": "1.0.amzn1"
+      },
+      "python27": {
+        "version": "2.7.10",
+        "release": "4.120.amzn1"
+      },
+      "hmaccalc": {
+        "version": "0.9.12",
+        "release": "1.9.amzn1"
+      },
+      "ruby20-libs": {
+        "version": "2.0.0.648",
+        "release": "1.29.amzn1"
+      },
+      "bind-utils": {
+        "version": "9.8.2",
+        "release": "0.37.rc1.45.amzn1"
+      },
+      "python27-six": {
+        "version": "1.8.0",
+        "release": "1.23.amzn1"
+      },
+      "aws-cli": {
+        "version": "1.10.33",
+        "release": "1.38.amzn1"
+      },
+      "libmount": {
+        "version": "2.23.2",
+        "release": "22.26.amzn1"
+      },
+      "python27-virtualenv": {
+        "version": "12.0.7",
+        "release": "1.12.amzn1"
+      },
+      "xorg-x11-fonts-Type1": {
+        "version": "7.2",
+        "release": "9.1.5.amzn1"
+      },
+      "pam_krb5": {
+        "version": "2.3.11",
+        "release": "9.12.amzn1"
+      },
+      "python27-ecdsa": {
+        "version": "0.11",
+        "release": "3.3.amzn1"
+      },
+      "pam_passwdqc": {
+        "version": "1.0.5",
+        "release": "6.8.amzn1"
+      },
+      "ruby20": {
+        "version": "2.0.0.648",
+        "release": "1.29.amzn1"
+      },
+      "screen": {
+        "version": "4.0.3",
+        "release": "16.5.amzn1"
+      },
+      "grubby": {
+        "version": "7.0.15",
+        "release": "5.7.amzn1"
+      },
+      "get_reference_source": {
+        "version": "1.2",
+        "release": "0.4.amzn1"
+      },
+      "python27-pyliblzma": {
+        "version": "0.5.3",
+        "release": "11.6.amzn1"
+      },
+      "psacct": {
+        "version": "6.3.2",
+        "release": "63.8.amzn1"
+      },
+      "python27-PyYAML": {
+        "version": "3.10",
+        "release": "3.10.amzn1"
+      },
+      "ntsysv": {
+        "version": "1.3.49.3",
+        "release": "2.14.amzn1"
+      },
+      "python27-markupsafe": {
+        "version": "0.11",
+        "release": "4.6.amzn1"
+      },
+      "perl-Digest-HMAC": {
+        "version": "1.03",
+        "release": "5.7.amzn1"
+      },
+      "python27-backports-ssl_match_hostname": {
+        "version": "3.4.0.2",
+        "release": "1.12.amzn1"
+      },
+      "tmpwatch": {
+        "version": "2.9.16",
+        "release": "4.10.amzn1"
+      },
+      "python27-pip": {
+        "version": "6.1.1",
+        "release": "1.21.amzn1"
+      },
+      "nano": {
+        "version": "2.5.3",
+        "release": "1.19.amzn1"
+      },
+      "python27-jmespath": {
+        "version": "0.9.0",
+        "release": "1.11.amzn1"
+      },
+      "acl": {
+        "version": "2.2.49",
+        "release": "6.11.amzn1"
+      },
+      "python27-pyasn1": {
+        "version": "0.1.7",
+        "release": "2.9.amzn1"
+      },
+      "bc": {
+        "version": "1.06.95",
+        "release": "1.10.amzn1"
+      },
+      "javapackages-tools": {
+        "version": "0.9.1",
+        "release": "1.5.amzn1"
+      },
+      "time": {
+        "version": "1.7",
+        "release": "38.9.amzn1"
+      },
+      "newt-python27": {
+        "version": "0.52.11",
+        "release": "3.11.amzn1"
+      },
+      "lsof": {
+        "version": "4.82",
+        "release": "4.10.amzn1"
+      },
+      "logrotate": {
+        "version": "3.7.8",
+        "release": "17.13.amzn1"
+      },
+      "traceroute": {
+        "version": "2.0.14",
+        "release": "2.7.amzn1"
+      },
+      "nss-sysinit": {
+        "version": "3.21.0",
+        "release": "9.76.amzn1"
+      },
+      "setserial": {
+        "version": "2.17",
+        "release": "25.7.amzn1"
+      },
+      "update-motd": {
+        "version": "1.0.1",
+        "release": "3.0.amzn1"
+      },
+      "words": {
+        "version": "3.0",
+        "release": "17.8.amzn1"
+      },
+      "kmod": {
+        "version": "14",
+        "release": "10.10.amzn1"
+      },
+      "tcp_wrappers": {
+        "version": "7.6",
+        "release": "75.11.amzn1"
+      },
+      "libicu": {
+        "version": "50.1.2",
+        "release": "11.12.amzn1"
+      },
+      "iptables": {
+        "version": "1.4.18",
+        "release": "1.22.amzn1"
+      },
+      "make": {
+        "version": "3.82",
+        "release": "21.10.amzn1"
+      },
+      "dejavu-serif-fonts": {
+        "version": "2.33",
+        "release": "6.6.amzn1"
+      },
+      "dash": {
+        "version": "0.5.5.1",
+        "release": "4.5.amzn1"
+      },
+      "slang": {
+        "version": "2.2.1",
+        "release": "1.8.amzn1"
+      },
+      "libX11": {
+        "version": "1.6.0",
+        "release": "2.2.12.amzn1"
+      },
+      "libXrender": {
+        "version": "0.9.8",
+        "release": "2.1.9.amzn1"
+      },
+      "gpm-libs": {
+        "version": "1.20.6",
+        "release": "12.8.amzn1"
+      },
+      "checkpolicy": {
+        "version": "2.1.10",
+        "release": "1.9.amzn1"
+      },
+      "krb5-libs": {
+        "version": "1.13.2",
+        "release": "12.40.amzn1"
+      },
+      "ca-certificates": {
+        "version": "2015.2.6",
+        "release": "65.0.1.15.amzn1"
+      },
+      "e2fsprogs": {
+        "version": "1.42.12",
+        "release": "4.40.amzn1"
+      },
+      "pam": {
+        "version": "1.1.8",
+        "release": "12.33.amzn1"
+      },
+      "fontconfig": {
+        "version": "2.8.0",
+        "release": "5.8.amzn1"
+      },
+      "python27-dateutil": {
+        "version": "2.1",
+        "release": "1.3.amzn1"
+      },
+      "rubygem20-psych": {
+        "version": "2.0.0",
+        "release": "1.29.amzn1"
+      },
+      "rubygem20-json": {
+        "version": "1.8.3",
+        "release": "1.51.amzn1"
+      },
+      "python27-docutils": {
+        "version": "0.11",
+        "release": "1.15.amzn1"
+      },
+      "python27-paramiko": {
+        "version": "1.15.1",
+        "release": "1.5.amzn1"
+      },
+      "python27-pyxattr": {
+        "version": "0.5.0",
+        "release": "1.6.amzn1"
+      },
+      "python27-backports": {
+        "version": "1.0",
+        "release": "3.14.amzn1"
+      },
+      "python27-jinja2": {
+        "version": "2.7.2",
+        "release": "2.15.amzn1"
+      },
+      "python27-ply": {
+        "version": "3.4",
+        "release": "3.12.amzn1"
+      },
+      "python27-jsonpatch": {
+        "version": "1.2",
+        "release": "2.5.amzn1"
+      },
+      "jpackage-utils": {
+        "version": "1.7.5",
+        "release": "27.17.amzn1"
+      },
+      "python27-daemon": {
+        "version": "1.5.2",
+        "release": "1.5.amzn1"
+      },
+      "rpcbind": {
+        "version": "0.2.0",
+        "release": "11.8.amzn1"
+      },
+      "nss": {
+        "version": "3.21.0",
+        "release": "9.76.amzn1"
+      },
+      "nss-tools": {
+        "version": "3.21.0",
+        "release": "9.76.amzn1"
+      },
+      "binutils": {
+        "version": "2.23.52.0.1",
+        "release": "55.65.amzn1"
+      },
+      "setup": {
+        "version": "2.8.14",
+        "release": "20.12.amzn1"
+      },
+      "tzdata": {
+        "version": "2016d",
+        "release": "1.62.amzn1"
+      },
+      "tzdata-java": {
+        "version": "2016d",
+        "release": "1.62.amzn1"
+      },
+      "fontpackages-filesystem": {
+        "version": "1.41",
+        "release": "1.1.2.amzn1"
+      },
+      "kbd-misc": {
+        "version": "1.15",
+        "release": "11.4.amzn1"
+      },
+      "sysctl-defaults": {
+        "version": "1.0",
+        "release": "1.1.amzn1"
+      },
+      "dhcp-common": {
+        "version": "4.1.1",
+        "release": "43.P1.24.amzn1"
+      },
+      "nss-softokn-freebl": {
+        "version": "3.16.2.3",
+        "release": "14.2.38.amzn1"
+      },
+      "glibc-common": {
+        "version": "2.17",
+        "release": "106.167.amzn1"
+      },
+      "ncurses-libs": {
+        "version": "5.7",
+        "release": "3.20090208.13.amzn1"
+      },
+      "libsepol": {
+        "version": "2.1.7",
+        "release": "3.12.amzn1"
+      },
+      "zlib": {
+        "version": "1.2.8",
+        "release": "7.18.amzn1"
+      },
+      "libcom_err": {
+        "version": "1.42.12",
+        "release": "4.40.amzn1"
+      },
+      "chkconfig": {
+        "version": "1.3.49.3",
+        "release": "2.14.amzn1"
+      },
+      "audit-libs": {
+        "version": "2.4.1",
+        "release": "5.27.amzn1"
+      },
+      "readline": {
+        "version": "6.2",
+        "release": "9.14.amzn1"
+      },
+      "libstdc++48": {
+        "version": "4.8.3",
+        "release": "9.109.amzn1"
+      },
+      "xz-libs": {
+        "version": "5.1.2",
+        "release": "12alpha.12.amzn1"
+      },
+      "nss-util": {
+        "version": "3.21.0",
+        "release": "2.2.50.amzn1"
+      },
+      "libgpg-error": {
+        "version": "1.11",
+        "release": "1.12.amzn1"
+      },
+      "freetype": {
+        "version": "2.3.11",
+        "release": "15.14.amzn1"
+      },
+      "libattr": {
+        "version": "2.4.46",
+        "release": "12.10.amzn1"
+      },
+      "shadow-utils": {
+        "version": "4.1.4.2",
+        "release": "13.10.amzn1"
+      },
+      "lua": {
+        "version": "5.1.4",
+        "release": "4.1.9.amzn1"
+      },
+      "keyutils-libs": {
+        "version": "1.5.8",
+        "release": "3.12.amzn1"
+      },
+      "libgcrypt": {
+        "version": "1.5.3",
+        "release": "12.18.amzn1"
+      },
+      "sqlite": {
+        "version": "3.7.17",
+        "release": "6.13.amzn1"
+      },
+      "e2fsprogs-libs": {
+        "version": "1.42.12",
+        "release": "4.40.amzn1"
+      },
+      "file-libs": {
+        "version": "5.22",
+        "release": "4.31.amzn1"
+      },
+      "gdbm": {
+        "version": "1.8.0",
+        "release": "36.6.amzn1"
+      },
+      "groff-base": {
+        "version": "1.22.2",
+        "release": "8.11.amzn1"
+      },
+      "libffi": {
+        "version": "3.0.13",
+        "release": "11.4.amzn1"
+      },
+      "apr": {
+        "version": "1.5.1",
+        "release": "1.12.amzn1"
+      },
+      "apr-util-ldap": {
+        "version": "1.4.1",
+        "release": "4.17.amzn1"
+      },
+      "chefdk": {
+        "version": "0.15.15",
+        "release": "1.el6"
+      },
+      "kernel-tools": {
+        "version": "4.4.14",
+        "release": "24.50.amzn1"
+      },
+      "perl-TermReadKey": {
+        "version": "2.30",
+        "release": "20.9.amzn1"
+      },
+      "perl-Git": {
+        "version": "2.7.4",
+        "release": "1.47.amzn1"
+      },
+      "libxml2-python27": {
+        "version": "2.9.1",
+        "release": "6.3.49.amzn1"
+      },
+      "httpd24": {
+        "version": "2.4.23",
+        "release": "1.65.amzn1"
+      },
+      "perl-Data-Dumper": {
+        "version": "2.145",
+        "release": "3.5.amzn1"
+      },
+      "perl-Test-Harness": {
+        "version": "3.28",
+        "release": "2.5.amzn1"
+      },
+      "m4": {
+        "version": "1.4.16",
+        "release": "9.10.amzn1"
+      },
+      "automake": {
+        "version": "1.13.4",
+        "release": "3.15.amzn1"
+      },
+      "gpg-pubkey": {
+        "version": "21c0f39f",
+        "release": "56d0e29a"
+      },
+      "mysql-community-libs": {
+        "version": "5.5.50",
+        "release": "2.el6"
+      },
+      "perl-Compress-Raw-Bzip2": {
+        "version": "2.061",
+        "release": "3.11.amzn1"
+      },
+      "perl-Compress-Raw-Zlib": {
+        "version": "2.061",
+        "release": "4.1.amzn1"
+      },
+      "perl-PlRPC": {
+        "version": "0.2020",
+        "release": "14.7.amzn1"
+      },
+      "mysql-community-server": {
+        "version": "5.5.50",
+        "release": "2.el6"
+      },
+      "glib2": {
+        "version": "2.36.3",
+        "release": "5.18.amzn1"
+      },
+      "filesystem": {
+        "version": "2.4.30",
+        "release": "3.8.amzn1"
+      },
+      "tar": {
+        "version": "1.26",
+        "release": "31.22.amzn1"
+      },
+      "vim-filesystem": {
+        "version": "7.4.1848",
+        "release": "1.41.amzn1"
+      },
+      "gmp": {
+        "version": "6.0.0",
+        "release": "11.16.amzn1"
+      },
+      "libX11-common": {
+        "version": "1.6.0",
+        "release": "2.2.12.amzn1"
+      },
+      "net-tools": {
+        "version": "1.60",
+        "release": "110.10.amzn1"
+      },
+      "ncurses-base": {
+        "version": "5.7",
+        "release": "3.20090208.13.amzn1"
+      },
+      "libtasn1": {
+        "version": "2.3",
+        "release": "6.6.amzn1"
+      },
+      "glibc": {
+        "version": "2.17",
+        "release": "106.167.amzn1"
+      },
+      "pciutils-libs": {
+        "version": "3.1.10",
+        "release": "4.11.amzn1"
+      },
+      "libselinux": {
+        "version": "2.1.10",
+        "release": "3.22.amzn1"
+      },
+      "libXfont": {
+        "version": "1.4.5",
+        "release": "5.12.amzn1"
+      },
+      "popt": {
+        "version": "1.13",
+        "release": "7.7.amzn1"
+      },
+      "perl-podlators": {
+        "version": "2.5.1",
+        "release": "3.8.amzn1"
+      },
+      "bzip2-libs": {
+        "version": "1.0.6",
+        "release": "8.12.amzn1"
+      },
+      "perl-Text-ParseWords": {
+        "version": "3.29",
+        "release": "4.5.amzn1"
+      },
+      "libuuid": {
+        "version": "2.23.2",
+        "release": "22.26.amzn1"
+      },
+      "perl-constant": {
+        "version": "1.27",
+        "release": "2.5.amzn1"
+      },
+      "tcp_wrappers-libs": {
+        "version": "7.6",
+        "release": "75.11.amzn1"
+      },
+      "perl-PathTools": {
+        "version": "3.40",
+        "release": "5.5.amzn1"
+      },
+      "libudev": {
+        "version": "173",
+        "release": "4.13.amzn1"
+      },
+      "perl-threads-shared": {
+        "version": "1.43",
+        "release": "6.5.amzn1"
+      },
+      "libcap": {
+        "version": "2.16",
+        "release": "5.5.8.amzn1"
+      },
+      "perl-File-Path": {
+        "version": "2.09",
+        "release": "2.5.amzn1"
+      },
+      "libcap-ng": {
+        "version": "0.7.3",
+        "release": "5.13.amzn1"
+      },
+      "perl-Digest": {
+        "version": "1.17",
+        "release": "245.5.amzn1"
+      },
+      "cyrus-sasl-lib": {
+        "version": "2.1.23",
+        "release": "13.16.amzn1"
+      },
+      "upstart": {
+        "version": "0.6.5",
+        "release": "13.3.13.amzn1"
+      },
+      "expat": {
+        "version": "2.1.0",
+        "release": "8.18.amzn1"
+      },
+      "libxslt": {
+        "version": "1.1.28",
+        "release": "5.12.amzn1"
+      },
+      "cpio": {
+        "version": "2.10",
+        "release": "12.12.amzn1"
+      },
+      "ttmkfdir": {
+        "version": "3.0.9",
+        "release": "32.1.5.amzn1"
+      },
+      "shared-mime-info": {
+        "version": "1.1",
+        "release": "7.7.amzn1"
+      },
+      "db4-utils": {
+        "version": "4.7.25",
+        "release": "18.11.amzn1"
+      },
+      "libassuan": {
+        "version": "2.0.3",
+        "release": "3.3.amzn1"
+      },
+      "libselinux-utils": {
+        "version": "2.1.10",
+        "release": "3.22.amzn1"
+      },
+      "which": {
+        "version": "2.19",
+        "release": "6.10.amzn1"
+      },
+      "lcms2": {
+        "version": "2.5",
+        "release": "4.4.amzn1"
+      },
+      "procps": {
+        "version": "3.2.8",
+        "release": "30.14.amzn1"
+      },
+      "libXtst": {
+        "version": "1.2.2",
+        "release": "2.1.9.amzn1"
+      },
+      "p11-kit": {
+        "version": "0.18.5",
+        "release": "2.3.amzn1"
+      },
+      "numactl": {
+        "version": "2.0.7",
+        "release": "8.11.amzn1"
+      },
+      "libjpeg-turbo": {
+        "version": "1.2.90",
+        "release": "5.14.amzn1"
+      },
+      "libblkid": {
+        "version": "2.23.2",
+        "release": "22.26.amzn1"
+      },
+      "xorg-x11-font-utils": {
+        "version": "7.2",
+        "release": "11.5.amzn1"
+      },
+      "libpwquality": {
+        "version": "1.2.3",
+        "release": "4.8.amzn1"
+      },
+      "perl-Pod-Perldoc": {
+        "version": "3.20",
+        "release": "4.7.amzn1"
+      },
+      "sysvinit": {
+        "version": "2.87",
+        "release": "6.dsf.15.amzn1"
+      },
+      "perl-Pod-Usage": {
+        "version": "1.63",
+        "release": "3.5.amzn1"
+      },
+      "rubygems20": {
+        "version": "2.0.14.1",
+        "release": "1.29.amzn1"
+      },
+      "perl-Exporter": {
+        "version": "5.68",
+        "release": "3.5.amzn1"
+      },
+      "python27-crypto": {
+        "version": "2.6.1",
+        "release": "1.12.amzn1"
+      },
+      "perl-Scalar-List-Utils": {
+        "version": "1.27",
+        "release": "248.5.amzn1"
+      },
+      "python27-iniparse": {
+        "version": "0.3.1",
+        "release": "2.1.9.amzn1"
+      },
+      "perl-threads": {
+        "version": "1.87",
+        "release": "4.5.amzn1"
+      },
+      "python27-requests": {
+        "version": "1.2.3",
+        "release": "5.10.amzn1"
+      },
+      "perl-Time-Local": {
+        "version": "1.2300",
+        "release": "2.5.amzn1"
+      },
+      "python27-pystache": {
+        "version": "0.5.3",
+        "release": "2.8.amzn1"
+      },
+      "perl-Digest-SHA": {
+        "version": "5.85",
+        "release": "3.5.amzn1"
+      },
+      "libgssglue": {
+        "version": "0.1",
+        "release": "11.7.amzn1"
+      },
+      "device-mapper-persistent-data": {
+        "version": "0.3.2",
+        "release": "1.7.amzn1"
+      },
+      "aws-apitools-common": {
+        "version": "1.1.0",
+        "release": "1.9.amzn1"
+      },
+      "keyutils": {
+        "version": "1.5.8",
+        "release": "3.12.amzn1"
+      },
+      "xz": {
+        "version": "5.1.2",
+        "release": "12alpha.12.amzn1"
+      },
+      "pinentry": {
+        "version": "0.7.6",
+        "release": "6.11.amzn1"
+      },
+      "tree": {
+        "version": "1.6.0",
+        "release": "5.8.amzn1"
+      },
+      "vim-common": {
+        "version": "7.4.1848",
+        "release": "1.41.amzn1"
+      },
+      "perl-Error": {
+        "version": "0.17020",
+        "release": "2.9.amzn1"
+      },
+      "libXau": {
+        "version": "1.0.6",
+        "release": "4.9.amzn1"
+      },
+      "libxml2": {
+        "version": "2.9.1",
+        "release": "6.3.49.amzn1"
+      },
+      "libXcomposite": {
+        "version": "0.4.3",
+        "release": "4.6.amzn1"
+      },
+      "json-c": {
+        "version": "0.11",
+        "release": "6.8.amzn1"
+      },
+      "openssl": {
+        "version": "1.0.1k",
+        "release": "14.91.amzn1"
+      },
+      "gzip": {
+        "version": "1.5",
+        "release": "8.18.amzn1"
+      },
+      "pcre-devel": {
+        "version": "8.21",
+        "release": "7.7.amzn1"
+      },
+      "python27-chardet": {
+        "version": "2.0.1",
+        "release": "7.7.amzn1"
+      },
+      "autoconf": {
+        "version": "2.69",
+        "release": "11.9.amzn1"
+      },
+      "rubygem20-bigdecimal": {
+        "version": "1.2.0",
+        "release": "1.29.amzn1"
+      },
+      "python27-simplejson": {
+        "version": "3.6.5",
+        "release": "1.12.amzn1"
+      },
+      "python27-setuptools": {
+        "version": "12.2",
+        "release": "1.30.amzn1"
+      },
+      "python27-botocore": {
+        "version": "1.4.23",
+        "release": "1.54.amzn1"
+      },
+      "python27-colorama": {
+        "version": "0.2.5",
+        "release": "1.7.amzn1"
+      },
+      "mysql-community-common": {
+        "version": "5.5.50",
+        "release": "2.el6"
+      },
+      "generic-logos": {
+        "version": "17.0.0",
+        "release": "2.5.amzn1"
+      },
+      "perl-Net-Daemon": {
+        "version": "0.48",
+        "release": "5.5.amzn1"
+      },
+      "groff": {
+        "version": "1.22.2",
+        "release": "8.11.amzn1"
+      },
+      "perl-DBI": {
+        "version": "1.627",
+        "release": "4.8.amzn1"
+      },
+      "fipscheck": {
+        "version": "1.3.1",
+        "release": "3.13.amzn1"
+      },
+      "curl": {
+        "version": "7.40.0",
+        "release": "8.57.amzn1"
+      },
+      "libuser": {
+        "version": "0.60",
+        "release": "7.23.amzn1"
+      },
+      "device-mapper": {
+        "version": "1.02.93",
+        "release": "3.26.amzn1"
+      },
+      "cryptsetup-libs": {
+        "version": "1.6.6",
+        "release": "3.21.amzn1"
+      },
+      "ec2-utils": {
+        "version": "0.4",
+        "release": "1.25.amzn1"
+      },
+      "gnupg2": {
+        "version": "2.0.28",
+        "release": "1.30.amzn1"
+      },
+      "rpm-python27": {
+        "version": "4.11.2",
+        "release": "2.73.amzn1"
+      },
+      "system-release": {
+        "version": "2016.03",
+        "release": "0.5"
+      },
+      "libsysfs": {
+        "version": "2.1.0",
+        "release": "7.10.amzn1"
+      },
+      "openssh": {
+        "version": "6.6.1p1",
+        "release": "25.61.amzn1"
+      },
+      "libcgroup": {
+        "version": "0.40.rc1",
+        "release": "5.11.amzn1"
+      },
+      "cyrus-sasl": {
+        "version": "2.1.23",
+        "release": "13.16.amzn1"
+      },
+      "crontabs": {
+        "version": "1.10",
+        "release": "33.9.amzn1"
+      },
+      "quota-nls": {
+        "version": "4.00",
+        "release": "7.18.amzn1"
+      },
+      "authconfig": {
+        "version": "6.2.8",
+        "release": "9.27.amzn1"
+      }
+    },
+    "hostname": "ip-172-31-43-12",
+    "machinename": "ip-172-31-43-12",
+    "fqdn": "ip-172-31-43-12.eu-west-1.compute.internal",
+    "domain": "eu-west-1.compute.internal",
+    "cloud_v2": {
+      "public_ipv4_addrs": [
+        "52.16.236.42"
+      ],
+      "local_ipv4_addrs": [
+        "172.31.43.12"
+      ],
+      "provider": "ec2",
+      "public_hostname": "ec2-52-16-236-42.eu-west-1.compute.amazonaws.com",
+      "local_hostname": "ip-172-31-43-12.eu-west-1.compute.internal",
+      "public_ipv4": "52.16.236.42",
+      "local_ipv4": "172.31.43.12"
+    },
+    "root_group": "root",
+    "keys": {
+      "ssh": {
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDj7HCaDRkY41D5n7rMC3DWflGXgF6E3EB32D81Kl1xWURoV70zp4apiWa0Rlf1Z7OIjIZl7iPgQab3bz/Eyq+BcW0RNMt8ObNh5A4k8p3kfBAoQ7linRC+8AfB05NUG2KZpJrmO6rvnqAO9KDPlqfUmTTP+S++lya8Av8V8Ey47JE09zrzgNp+7jj99/VEGATi8PATBHR0rLDguzb50q42s+skq7oLN3ZTqROx0leVFDHDZnrRYqbe4CphrWO7IWpdFryqyV/A0gUuYldevetMRQqu/FnkqmyQNv2NbftUoW4bjeAs9WmBZdNLHKQgyJMMdcgjlXuoF0D8e3QjaqNL",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNX8sYIVXbujylZKsoaKx02TrdtwVQKbQ4Ofd7KCpzBtBC/5HglbIv2wNd0ebHia6DaPb6CR8nMqnQKnHneNSMM=",
+        "host_ecdsa_type": "ecdsa-sha2-nistp256",
+        "host_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIFKdUTdsGn03fglXkdZ+KFAHLeoT3Ov9D56XGM4E4GaX",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAOxHY4q+utNGR/hY8zEcV7qQ91ObSGKauuMFar3BsJry9uOafnCcJHNlZMNAvwIkvVWAugW3uLa/kWrRjNtIbdyS9Bydn42qRzHqtUsIjNk4OxYuDLV5JKi8iN/6/Q74kMU6zNnHbCC7fSMOZrNej4PFYDYQ9TLnU7vFFSImwxg/AAAAFQDfwU9YpJYIDZtYVVnvRh1laMdpyQAAAIBRSvWz+pc7GlsBTFzLy6Gecb9u88mP5+l/mHAk0YT/cHgU6GfUNie+FiFu+hLspzHyxnLGyHFu7wZ7fVob+wd3UUzwNfig3ghjw+0YdMbDxcmmaXRW1LMEvrA6/HTTqyy09t5tor+BI8Co3DKU6Bfj3oJIexkr41ijfjViRJaq7gAAAIBvAocwon5plmzd7u0UisoCzGBSeUQRDJEUiOSJP3o87+u+bzRR5s0rXjW1Vg5FYqbldv2VuIGDiAh6rqjM8Ay0fUiyOwUNnIlnRSi44/6y/f3mj0u9xpwJNkaNc91QnppVAKKdNVCo5MO8ijWgPK3jgvQhKytj06ZQVTkzmuCbQw=="
+      }
+    },
+    "recipes": [
+      "apt",
+      "apt::default",
+      "phpapp",
+      "phpapp::default",
+      "apache2::default",
+      "apache2::mpm_prefork",
+      "apache2::mod_status",
+      "apache2::mod_alias",
+      "apache2::mod_auth_basic",
+      "apache2::mod_authn_core",
+      "apache2::mod_authn_file",
+      "apache2::mod_authz_core",
+      "apache2::mod_authz_groupfile",
+      "apache2::mod_authz_host",
+      "apache2::mod_authz_user",
+      "apache2::mod_autoindex",
+      "apache2::mod_deflate",
+      "apache2::mod_dir",
+      "apache2::mod_env",
+      "apache2::mod_mime",
+      "apache2::mod_negotiation",
+      "apache2::mod_setenvif",
+      "apache2::mod_log_config",
+      "apache2::mod_logio",
+      "apache2::mod_unixd",
+      "php::default",
+      "php::package",
+      "php::ini",
+      "yum-mysql-community::mysql55"
+    ],
+    "expanded_run_list": [
+      "apt::default",
+      "phpapp::default"
+    ],
+    "roles": [
+
+    ],
+    "cookbooks": {
+      "apt": {
+        "version": "4.0.1"
+      },
+      "phpapp": {
+        "version": "0.1.0"
+      },
+      "compat_resource": {
+        "version": "12.10.6"
+      },
+      "apache2": {
+        "version": "3.2.2"
+      },
+      "mysql": {
+        "version": "7.0.0"
+      },
+      "php": {
+        "version": "1.9.0"
+      },
+      "yum-mysql-community": {
+        "version": "0.2.0"
+      },
+      "smf": {
+        "version": "2.2.8"
+      },
+      "build-essential": {
+        "version": "6.0.0"
+      },
+      "xml": {
+        "version": "2.0.0"
+      },
+      "yum-epel": {
+        "version": "0.7.0"
+      },
+      "windows": {
+        "version": "1.44.1"
+      },
+      "iis": {
+        "version": "4.1.10"
+      },
+      "yum": {
+        "version": "3.11.0"
+      },
+      "rbac": {
+        "version": "1.0.3"
+      },
+      "seven_zip": {
+        "version": "2.0.1"
+      },
+      "mingw": {
+        "version": "1.2.2"
+      },
+      "chef-sugar": {
+        "version": "3.3.0"
+      },
+      "chef_handler": {
+        "version": "1.4.0"
+      }
+    }
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[phpapp]"
+  ]
 }

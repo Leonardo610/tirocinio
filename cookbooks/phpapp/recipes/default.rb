@@ -10,8 +10,8 @@
 include_recipe "apache2"
 #include_recipe "mysql"
 include_recipe "php"
-include_recipe "php::module_mysql"
-include_recipe "apache2::mod_php5"
+#include_recipe "php::module_mysql"
+#include_recipe "apache2::mod_php5"
 
 apache_site "default" do
 	enable true
@@ -22,6 +22,10 @@ mysql_service 'default' do
   version '5.5'
   initial_root_password 'change me'
   action [:create, :start]
+end
+
+package "php-mysql" do
+	action :install
 end
 
 # Configure the MySQL client.

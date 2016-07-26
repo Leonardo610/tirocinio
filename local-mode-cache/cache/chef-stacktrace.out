@@ -1,5 +1,5 @@
-Generated at 2016-07-26 13:01:50 +0000
-Chef::Exceptions::Exec: yum_package[php-mysql] (php::module_mysql line 22) had an error: Chef::Exceptions::Exec: yum -d0 -e0 -y install php-mysql-5.3.29-1.8.amzn1 returned 1:
+Generated at 2016-07-26 14:47:11 +0000
+Chef::Exceptions::Exec: yum_package[php-mysql] (phpapp::default line 27) had an error: Chef::Exceptions::Exec: yum -d0 -e0 -y install php-mysql-5.3.29-1.8.amzn1 returned 1:
 STDOUT:  You could try using --skip-broken to work around the problem
  You could try running: rpm -Va --nofiles --nodigest
 
