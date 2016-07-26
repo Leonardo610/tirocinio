@@ -1,0 +1,11 @@
+DEPENDENCIES
+  phpapp
+    path: .
+    metadata: true
+
+GRAPH
+  apache2 (3.2.2)
+  mysql (8.0.0)
+  phpapp (0.1.0)
+    apache2 (>= 0.0.0)
+    mysql (>= 0.0.0)
