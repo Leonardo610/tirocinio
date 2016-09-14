@@ -25,7 +25,6 @@ mkdir .chef
 echo "cookbook_path [ '/home/centos/chef/cookbooks' ]" > .chef/knife.rb
 # echo '6'
 knife cookbook create tirocinio
-# echo '7'
 cd cookbooks/tirocinio
 
 
