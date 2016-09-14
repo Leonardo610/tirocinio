@@ -21,7 +21,6 @@ rm master
 cd chef/
 # echo '4'
 mkdir .chef
-# echo '5'
 echo "cookbook_path [ '/home/centos/chef/cookbooks' ]" > .chef/knife.rb
 # echo '6'
 knife cookbook create tirocinio
