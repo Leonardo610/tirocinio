@@ -65,4 +65,6 @@ cd ..
 rm provision.sh
 cd chef
 sudo chef-solo -c solo.rb -j web.json
-
+cd /home/centos
+wget http://yourserver:port/jnlpJars/slave.jar
+java -jar slave.jar -jnlpUrl http://52.19.16.51:8080//computer/terraform/slave-agent.jnlp 
