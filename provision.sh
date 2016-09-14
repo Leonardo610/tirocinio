@@ -5,36 +5,64 @@
 # Piping curl to bash is always an interesting idea.
 # We'll, however, trust this now for installing Chef.
 
-curl -L https://www.opscode.com/chef/install.sh | sudo bash
+
 echo 'Downloading template chef'
-curl http://github.com/opscode/chef-repo/tarball/master
-echo '1'
+sudo yum -y install wget && sudo yum -y install nano
+wget https://packages.chef.io/stable/el/7/chefdk-0.11.2-1.el7.x86_64.rpm
+sudo rpm -ivh chefdk-0.11.2-1.el7.x86_64.rpm
+rm chefdk-0.11.2-1.el7.x86_64.rpm
+wget http://github.com/opscode/chef-repo/tarball/master
+# echo '1'
 tar -zxf master
-echo '2'
-mv chef-chef-repo* chef
+# echo '2'
+mv chef-* chef
 rm master
-echo '3'
+# echo '3'
 cd chef/
-echo '4'
+# echo '4'
 mkdir .chef
-echo '5'
+# echo '5'
 echo "cookbook_path [ '/home/centos/chef/cookbooks' ]" > .chef/knife.rb
-echo '6'
+# echo '6'
 knife cookbook create tirocinio
-echo '7'
-cd tirocinio
+# echo '7'
+cd cookbooks/tirocinio
+
 
 echo 'Creating Berksfile'
-#Creo il Berksfile
+# #Creo il Berksfile
 echo 'source "https://supermarket.chef.io"
 
-metadata
+metadata' > Berksfile
 
-cookbook "mysql"
-cookbook "tomcat"
-cookbook "java"' > Berksfile
+echo 'depends "tomcat"
+depends "java"
+depends "google-chrome"' >> metadata.rb
 
-#Scarico i cookbooks e le relative dipendenze
+echo 'Modifico recipes/default.rb'
+
+echo "include_recipe \"tomcat\"
+include_recipe \"java\"
+
+package 'tomcat' do
+  action :install
+#  install_path '/opt/tomcat'
+end
+
+service 'tomcat' do
+  action [:start, :enable]
+end" >> recipes/default.rb
+
+# #Scarico i cookbooks e le relative dipendenze
 echo 'Downloading cookbooks'
 berks vendor
+
+cd ../..
+echo 'file_cache_path "home/centos/chef-solo"
+cookbook_path "/home/centos/chef/cookbooks/tirocinio/berks-cookbooks"' > solo.rb
+echo '{  "run_list": [ "recipe[tirocinio]" ] }' > web.json
+cd ..
+rm provision.sh
+cd chef
+sudo chef-solo -c solo.rb -j web.json
 
