@@ -34,7 +34,7 @@ echo 'source "https://supermarket.chef.io"
 metadata' > Berksfile
 
 echo 'depends "tomcat"
-depends "java"
+depends "java", "~>1.7.0"
 depends "google-chrome"' >> metadata.rb
 
 echo 'Modifico recipes/default.rb'
@@ -58,7 +58,13 @@ berks vendor
 cd ../..
 echo 'file_cache_path "home/centos/chef-solo"
 cookbook_path "/home/centos/chef/cookbooks/tirocinio/berks-cookbooks"' > solo.rb
-echo '{  "run_list": [ "recipe[tirocinio]" ] }' > web.json
+echo '{ "java": {
+    "install_flavor": "oracle_rpm",
+    "jdk_version": "7",
+    "oracle": {
+      "accept_oracle_download_terms": true
+    }
+  }, "run_list": [ "recipe[tirocinio]", "recipe[java]" ] }' > web.json
 cd ..
 rm provision.sh
 cd chef
