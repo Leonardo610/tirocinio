@@ -1,7 +1,7 @@
-provider "aws" {
-  credentials_provider = "iam"
-  iam_role = "http://169.254.169.254:80/latest/meta-data/iam/security-credentials/jenkins-server"
-}
+provider "aws" {}
+#   credentials_provider = "iam"
+#   iam_role = "http://169.254.169.254:80/latest/meta-data/iam/security-credentials/jenkins-server"
+# }
 
 
 # # Configure the AWS Provider
