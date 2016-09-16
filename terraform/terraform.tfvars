@@ -1,2 +1,2 @@
 key = "keyterraform"
-key_file = "~/.ssh/keyterraform"
+key_file = "/home/ubuntu/.ssh/keyterraform"
