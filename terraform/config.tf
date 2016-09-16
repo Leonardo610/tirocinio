@@ -1,8 +1,6 @@
-#Specifica del provider
 provider "aws" {
-	access_key = "${var.access_key}"
-	secret_key = "${var.secret_key}"
-	region = "${var.region}"
+  credentials_provider = "iam"
+  iam_role = "http://169.254.169.254:80/latest/meta-data/iam/security-credentials/jenkins-server"
 }
 
 # #Configurazione del Load Balancer
