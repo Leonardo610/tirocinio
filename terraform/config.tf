@@ -3,6 +3,14 @@ provider "aws" {
   iam_role = "http://169.254.169.254:80/latest/meta-data/iam/security-credentials/jenkins-server"
 }
 
+
+# # Configure the AWS Provider
+# provider "aws" {
+#     access_key = "${var.aws_access_key}"
+#     secret_key = "${var.aws_secret_key}"
+#     region = "eu-west-1"
+# }
+
 # #Configurazione del Load Balancer
 # resource "aws_elb" "xpepper_lb" {
 # 	name = "xpeppers-terraform-elb"
