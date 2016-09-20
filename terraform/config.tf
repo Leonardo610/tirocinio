@@ -45,7 +45,7 @@ provider "aws" {
 
 #Prima istanza
 resource "aws_instance" "first_instance" {
-	ami = "ami-bd2f57ce"
+	ami = "ami-8ba6ddf8"
 	instance_type = "t2.small"
 	security_groups = ["test-terraform"]
 	key_name = "${var.key}"
