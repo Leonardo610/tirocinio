@@ -42,7 +42,7 @@ service 'tomcat' do
   action [:start, :enable]
 end" >> recipes/default.rb
 
-# #Scarico i cookbooks e le relative dipendenze
+#Scarico i cookbooks e le relative dipendenze
 echo 'Downloading cookbooks'
 berks vendor
 
