@@ -1,9 +1,3 @@
-#provider "aws" {
-#   credentials_provider = "iam"
-#   iam_role = "http://169.254.169.254:80/latest/meta-data/iam/security-credentials/jenkins-server"
-# }
-#gvuhuh
-
 # Configure the AWS Provider
 provider "aws" {
     access_key = "${var.access_key}"
@@ -11,39 +5,39 @@ provider "aws" {
     region = "eu-west-1"
 }
 
-# #Configurazione del Load Balancer
-# resource "aws_elb" "xpepper_lb" {
-# 	name = "xpeppers-terraform-elb"
-# 	availability_zones = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
+#Configurazione del Load Balancer
+resource "aws_elb" "xpepper_lb" {
+	name = "xpeppers-terraform-elb"
+	availability_zones = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
 
-# 	listener {
-# 		instance_port = 80
-# 		instance_protocol = "http"
-# 		lb_port = 80
-# 		lb_protocol = "http"
-# 	}
+	listener {
+		instance_port = 80
+		instance_protocol = "http"
+		lb_port = 80
+		lb_protocol = "http"
+	}
 
-# 	health_check {
-# 		healthy_threshold = 2
-# 		unhealthy_threshold = 2
-# 		target = "HTTP:8000/"
-# 		interval = 30
-# 		timeout = 3
-# 	}
+	health_check {
+		healthy_threshold = 2
+		unhealthy_threshold = 2
+		target = "HTTP:8000/"
+		interval = 30
+		timeout = 3
+	}
 
-# 	#Aggiungere le istanze
-# 	#instances = ["${aws_instance.first_instance.id}", "${aws_instance.second_instance.id}"]
-# 	#cross_zone_load_balancing = true
-# 	#idle_timeout = 60 di default
-# 	#connection_draining = true
-# 	#connection_draining_timeout = 400
+	# Aggiungere le istanze
+	instances = ["${aws_instance.first_instance.id}", "${aws_instance.second_instance.id}"]
+	cross_zone_load_balancing = true
+	idle_timeout = 60 di default
+	connection_draining = true
+	connection_draining_timeout = 400
 
-# 	tags {
-# 		Name = "xpeppers-terraform-elb"
-# 	}
-# }
+	tags {
+		Name = "xpeppers-terraform-elb"
+	}
+}
 
-#Prima istanza
+# Prima istanza
 resource "aws_instance" "first_instance" {
 	ami = "ami-be9ee5cd"
 	instance_type = "t2.small"
@@ -77,43 +71,54 @@ resource "aws_instance" "first_instance" {
     }
 }
 
-# resource "aws_eip" "ip1" {
-# 	instance = "${aws_instance.first_instance.id}"
-#     lifecycle {
-#         prevent_destroy = false
-#     }
-# }
+resource "aws_eip" "ip1" {
+	instance = "${aws_instance.first_instance.id}"
+    lifecycle {
+        prevent_destroy = false
+    }
+}
 	
 # Seconda istanza
-# resource "aws_instance" "second_instance" {
-# 	ami = "ami-7abd0209"
-# 	instance_type = "t2.micro"
-# 	security_groups = ["test-terraform"]
-# 	key_name = "${var.key}"
+resource "aws_instance" "second_instance" {
+	ami = "ami-7abd0209"
+	instance_type = "t2.micro"
+	security_groups = ["test-terraform"]
+	key_name = "${var.key}"
 
-# 	provisioner "file" {
-#       source = "./provision.sh"
-#        destination = "/home/centos"
-#        connection {
-#            user = "centos"
-#            key_file = "/Users/orione-#team/terraformWork/terraformTirocinio/keyterraform.pem"
-#            timeout = "60s"
-#        }
-#    }
+	provisioner "file" {
+      source = "./provision.sh"
+       destination = "/home/centos"
+       connection {
+           user = "centos"
+           key_file = "/Users/orione-#team/terraformWork/terraformTirocinio/keyterraform.pem"
+           timeout = "60s"
+       }
+   }
 
-#    provisioner "remote-exec" {
-#        inline = [
-#          	"chmod +x /home/centos/chef/provision.sh",
-#          	"/home/centos/chef/provision.sh"
-#        ]
-#        connection {
-#            user = "centos"
-#            key_file = "/Users/orione-#team/terraformWork/terraformTirocinio/keyterraform.pem"
-#            timeout = "60s"
-#        }
-#    }
-# }
+   provisioner "remote-exec" {
+       inline = [
+         	"chmod +x /home/centos/chef/provision.sh",
+         	"/home/centos/chef/provision.sh"
+       ]
+       connection {
+           user = "centos"
+           key_file = "/Users/orione-#team/terraformWork/terraformTirocinio/keyterraform.pem"
+           timeout = "60s"
+       }
+   }
+}
 
-#resource "aws_eip" "ip2" {
-#	instance = "${aws_instance.second_instance.id}"
-#}
+resource "aws_eip" "ip2" {
+	instance = "${aws_instance.second_instance.id}"
+}
+
+# Configurazione del DB
+resource "aws_db_instance" "default" {
+    allocated_storage = 10
+    engine = "mysql"
+    instance_class = "db.t2.micro"
+    name = "terraformTestDB"
+    username = "********"
+    password = "********"
+    apply_immediately = "true"
+}
