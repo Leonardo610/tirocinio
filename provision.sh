@@ -2,33 +2,24 @@
 #
 # A simple provisioning script that is run on both the app and lb nodes.
 
-# Piping curl to bash is always an interesting idea.
-# We'll, however, trust this now for installing Chef.
 
-
-echo 'Downloading template chef'
+echo 'Downloading and installing chef'
 sudo yum -y install wget && sudo yum -y install nano
 wget https://packages.chef.io/stable/el/7/chefdk-0.11.2-1.el7.x86_64.rpm
 sudo rpm -ivh chefdk-0.11.2-1.el7.x86_64.rpm
 rm chefdk-0.11.2-1.el7.x86_64.rpm
 wget http://github.com/opscode/chef-repo/tarball/master
-# echo '1'
 tar -zxf master
-# echo '2'
 mv chef-* chef
 rm master
-# echo '3'
 cd chef/
-# echo '4'
 mkdir .chef
 echo "cookbook_path [ '/home/centos/chef/cookbooks' ]" > .chef/knife.rb
-# echo '6'
 knife cookbook create tirocinio
 cd cookbooks/tirocinio
 
 
 echo 'Creating Berksfile'
-# #Creo il Berksfile
 echo 'source "https://supermarket.chef.io"
 
 metadata' > Berksfile
