@@ -71,12 +71,12 @@ resource "aws_instance" "first_instance" {
     }
 }
 
-resource "aws_eip" "ip1" {
-	instance = "${aws_instance.first_instance.id}"
-    lifecycle {
-        prevent_destroy = false
-    }
-}
+#resource "aws_eip" "ip1" {
+#instance = "${aws_instance.first_instance.id}"
+# lifecycle {
+#      prevent_destroy = false
+#   }
+#}
 	
 # # Seconda istanza
 # resource "aws_instance" "second_instance" {
