@@ -63,4 +63,4 @@ sudo chef-solo -c solo.rb -j web.json
 cd /home/centos
 wget http://52.212.97.129:8080/jnlpJars/slave.jar
 git clone https://github.com/Signorgionzs/inspec.git
-nohup java -jar slave.jar -jnlpUrl http://52.212.97.129:8080/computer/terraform/slave-agent.jnlp &
+java -jar slave.jar -jnlpUrl http://52.212.97.129:8080/computer/terraform/slave-agent.jnlp &
